@@ -176,3 +176,62 @@ function toggleClassPlayer(){
   const body = document.querySelector('body');
   body.classList.toggle('lightStore');
 }
+
+
+/////Payment Section//////////Payment Section////////////////////////////////////////
+
+// Add your publishable key from the Stripe Dashboard
+const stripe = Stripe('your-publishable-key-here');  // Replace with your actual key
+
+// Function to handle checkout process with Stripe
+async function checkout() {
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+  // Check if the cart is empty
+  if (cart.length === 0) {
+    alert("Your cart is empty. Please add items before checking out.");
+    return;
+  }
+
+  // Create an array of items in the format expected by Stripe
+  const lineItems = cart.map(item => ({
+    price_data: {
+      currency: 'usd',
+      product_data: {
+        name: item.product
+      },
+      unit_amount: Math.round(item.price * 100),  // Stripe expects amounts in cents
+    },
+    quantity: item.quantity,
+  }));
+
+  try {
+    // Send the line items to your server to create a Checkout Session
+    const response = await fetch('/create-checkout-session', {  // Replace with your server's endpoint
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ items: lineItems })
+    });
+
+    const session = await response.json();
+
+    if (session.error) {
+      alert(session.error);
+      return;
+    }
+
+    // Redirect to Stripe's Checkout page
+    const { error } = await stripe.redirectToCheckout({ sessionId: session.id });
+
+    if (error) {
+      alert(error.message);
+    }
+
+  } catch (error) {
+    console.error("Error during checkout:", error);
+    alert("An error occurred during checkout. Please try again later.");
+  }
+}
+
+// Event listener for the checkout button
+checkoutButton.addEventListener('click', checkout);
