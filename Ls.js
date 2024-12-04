@@ -168,11 +168,3 @@ cartItemsContainer.addEventListener('input', (event) => {
 
 // Initialize the cart display on page load
 updateCart();
-
-
-////Light Section////
-
-function toggleClassPlayer(){
-  const body = document.querySelector('body');
-  body.classList.toggle('lightStore');
-}
