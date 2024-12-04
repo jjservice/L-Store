@@ -119,7 +119,7 @@ function toggleCart() {
 
   // Change the button text based on cart visibility
   if (cartContainer.classList.contains('hidden')) {
-    toggleCartButton.textContent = 'Show Cart';
+    toggleCartButton.textContent = 'Shopping Cart';
   } else {
     toggleCartButton.textContent = 'Hide Cart';
   }

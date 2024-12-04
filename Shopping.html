@@ -4,13 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="Shopping.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <title>Document</title>
 </head>
 <body class="lightStore">
   <h1 onclick="toggleClassPlayer()">LOLLIPOP STORE</h1>
 
   <!-- Show/Hide Cart Button -->
-  <button id="toggle-cart" onclick="toggleCart()">Show Cart</button>
+  <button id="toggle-cart" onclick="toggleCart()"><i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
 
   <div class="cart" id="cart-container">
     <h2>Your Cart</h2>
@@ -20,7 +21,7 @@
     
 
     <!-- Checkout Button -->
-    <button id="checkout-button" onclick="checkout()">Checkout</button>
+    <button id="checkout-button" onclick="checkout()">Check-Out</button>
   </div>
 
   <ul class="product-List">
