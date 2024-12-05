@@ -353,6 +353,8 @@ body.light .img .imgBox{
     justify-content: center;
     align-items: center;
     text-align: center;
+    min-width: 300px;
+    max-width: 300px;
   }
   .Box{
     margin: 0% auto;
@@ -362,6 +364,7 @@ body.light .img .imgBox{
     align-items: center;
     animation: animate 15s linear infinite;
     min-width: 300px;
+    max-width: 300px;
 }
 @keyframes animate {
     0% {
