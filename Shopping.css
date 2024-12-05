@@ -158,7 +158,10 @@ p{
    
    }
    .cart{
-    width: 40%;
+    width: 60%;
+   }
+   #cart-container{
+    width: 60%;
    }
    .quantity-input{
     margin: 0% auto;
