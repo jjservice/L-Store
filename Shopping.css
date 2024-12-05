@@ -210,199 +210,7 @@ p{
     min-width: 300px;
   }
   
-
-  .container{
-    margin: 0% auto;
-    margin-top: 60px;
-    margin-bottom: 40px;
-    width: 90%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .Box{
-    width: 300px;
-    height: 300px;
 }
-
-
-@keyframes animate {
-    0% {
-        rotate: 0deg;
-    }
-    100% {
-        rotate: 360deg;
-    }
-}
-.container:hover .Box{
-    animation-play-state: paused;
-}
-.img{
-    position: relative;
-    left: -50%;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-}
-.img .imgBox{
-    position: absolute;
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    border: 2px solid rgba(255, 217, 0, 0.801);
-    transform: rotate(calc(360deg/8 * var(--i)));
-    transform-origin: 190px;
-    box-shadow: 0px 2px 20px blue;
-}
-body.light .img .imgBox{
-    box-shadow: 0px 2px 15px #ff105e;
-    border: 2px solid rgba(255, 217, 0, 0.863);
-}
-
-.img .imgBox img{
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-    transform: rotate(calc(-360deg/8 * var(--i)));
-    animation: animateimgBox 15s linear infinite;
-}
-
-.container:hover .img .imgBox img{
-    animation-play-state: paused;
-}
-
-@keyframes animateimgBox {
-    0% {
-        rotate: 0deg;
-    }
-    100% {
-        rotate: -360deg;
-    } 
-}
-
-.container{
-    margin: 0% auto;
-    flex-direction: column;
-    margin-top: 60px;
-    margin-bottom: 40px;
-    width: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    min-width: 300px;
-    max-width: 300px;
-  }
-  .Box{
-    margin: 0% auto;
-    width: 300px;
-    height: 300px;
-    justify-content: center;
-    align-items: center;
-    animation: animate 15s linear infinite;
-    min-width: 300px;
-    max-width: 300px;
-}
-@keyframes animate {
-    0% {
-        rotate: 0deg;
-    }
-    100% {
-        rotate: 360deg;
-    }
-}
-.container:hover .Box{
-    animation-play-state: paused;
-}
-.img{
-    position: relative;
-    left: -50%;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-}
-.img .imgBox{
-    position: absolute;
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    border: 2px solid rgba(255, 217, 0, 0.801);
-    transform: rotate(calc(360deg/8 * var(--i)));
-    transform-origin: 190px;
-    box-shadow: 0px 2px 8px lightskyblue;
-}
-body.lightStore .img .imgBox{
-   
-    box-shadow: 0px 2px 8px yellowgreen;
-    border: 2px solid rgba(255, 217, 0, 0.863);
-}
-
-.img .imgBox img{
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-    transform: rotate(calc(-360deg/8 * var(--i)));
-    animation: animateimgBox 15s linear infinite;
-}
-
-.container:hover .img .imgBox img{
-    animation-play-state: paused;
-}
-
-@keyframes animateimgBox {
-    0% {
-        rotate: 0deg;
-    }
-    100% {
-        rotate: -360deg;
-    } 
-}
-h6{
-    position: absolute;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-weight: bold;
-    font-size: 18px;
-    color: white;
-    text-shadow: 2px 2px 4px lightcoral;
-    background-color: rgba(0, 0, 139, 0.603);
-    box-shadow: 0px 3px 15px lightskyblue;
-    padding: 10px 5px;
-    border-radius: 12px;
-    
-}
-body.lightStore h6{
-    box-shadow: 0px 3px 10px black;
-    background-color: rgba(0, 100, 0, 0.664);
-}
-h6 ion-icon{
-    color: rgba(255, 217, 0, 0.596);
-    font-weight: bold;
-    border-bottom: 2px solid gold;
-    box-shadow: 0px 2px 10px #ff1060e8;
-    border-radius: 50px;
-    background-image: url(lollipop_3GIF.gif);
-    background-size: cover;
-    background-position: center;
-}
-body.lightStore h6 ion-icon{
-    box-shadow: 0px 0px 5px pink;
-}
-}
-
 
 /* Style for the cart container */
 .cart {
@@ -464,17 +272,24 @@ body.lightStore h6 ion-icon{
   }
 
 
+
+
+
   .container{
     margin: 0% auto;
-    margin-top: 60px;
-    margin-bottom: 40px;
-    width: 90%;
+    flex-direction: column;
+    margin-top: 50px;
+    margin-bottom: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    min-width: 200px;
   }
   .Box{
-    position: relative;
+    margin: 0% auto;
+    justify-content: center;
+    align-items: center;
     width: 300px;
     height: 300px;
     animation: animate 15s linear infinite;
@@ -493,9 +308,9 @@ body.lightStore h6 ion-icon{
 
 
 .img .imgBox img{
-    position: absolute;
-    top: 0%;
-    left: 0%;
+    margin: 0% auto;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -540,88 +355,13 @@ body.light .img .imgBox{
         rotate: -360deg;
     } 
 }
-
-.container{
-    margin: 0% auto;
-    flex-direction: column;
-    margin-top: 60px;
-    margin-bottom: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    min-width: 200px;
-  }
-  .Box{
-    margin: 0% auto;
-    width: 200px;
-    height: 300px;
-    justify-content: center;
-    align-items: center;
-    animation: animate 15s linear infinite;
-    min-width: 300px;
-   
-}
-@keyframes animate {
-    0% {
-        rotate: 0deg;
-    }
-    100% {
-        rotate: 360deg;
-    }
-}
-.container:hover .Box{
-    animation-play-state: paused;
-}
-.img{
-    position: relative;
-    left: -40%;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-}
-.img .imgBox{
-    position: absolute;
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    border: 2px solid rgba(255, 217, 0, 0.801);
-    transform: rotate(calc(360deg/8 * var(--i)));
-    transform-origin: 160px;
-    box-shadow: 0px 2px 8px lightskyblue;
-}
+  
 body.lightStore .img .imgBox{
     box-shadow: 0px 2px 8px yellowgreen;
     border: 2px solid rgba(255, 217, 0, 0.863);
 }
 
-.img .imgBox img{
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-    transform: rotate(calc(-360deg/8 * var(--i)));
-    animation: animateimgBox 15s linear infinite;
-}
 
-.container:hover .img .imgBox img{
-    animation-play-state: paused;
-}
-
-@keyframes animateimgBox {
-    0% {
-        rotate: 0deg;
-    }
-    100% {
-        rotate: -360deg;
-    } 
-}
 h6{
     position: absolute;
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -666,11 +406,11 @@ body.lightStore h6 ion-icon{
     width: 0%;
   }
   .navigation::-webkit-scrollbar-track {
-    box-shadow: 0px 2px 6px rgba(153, 205, 50, 0.856);
+    box-shadow: 0px 2px 6px rgba(162, 219, 48, 0.897);
     border-radius: 10px;
   }   
   .navigation::-webkit-scrollbar-thumb{
-    border: 1px solid gold;
+    border: 1px solid rgba(255, 217, 0, 0.856);
     border-radius: 10px;
     background: rgba(0, 0, 139, 0.562); 
     cursor: grab; 
@@ -685,7 +425,7 @@ body.lightStore h6 ion-icon{
   .navigation .mlb{
     margin: 5px;
     padding: 50px;
-    border: 2px solid gold;
+    border: 1px solid rgba(255, 217, 0, 0.863);
     box-shadow: 0px 3px 10px black;
     border-radius: 10px;
     background-image:url(Shirt1pic.webp);
@@ -705,7 +445,7 @@ body.lightStore h6 ion-icon{
   .navigation .nba{
     margin: 5px;
     padding: 50px;
-    border: 2px solid gold;
+    border: 2px solid rgba(255, 217, 0, 0.856);
     box-shadow: 0px 3px 10px black;
     border-radius: 10px;
     background-image: url(Shirt2pic.jpg);
@@ -724,7 +464,7 @@ body.lightStore h6 ion-icon{
   .navigation .L-Accesories-Nav{
     margin: 5px;
     padding: 50px;
-    border: 2px solid gold;
+    border: 2px solid rgba(255, 217, 0, 0.863);
     box-shadow: 0px 3px 10px black;
     border-radius: 10px;
     background-image:url(AccesoriesPic.png);
@@ -744,7 +484,7 @@ body.lightStore h6 ion-icon{
   .navigation .L-Clothing-Nav{
     margin: 5px;
     padding: 50px;
-    border: 2px solid gold;
+    border: 2px solid rgba(255, 217, 0, 0.856);
     box-shadow: 0px 3px 10px black;
     border-radius: 10px;
     background-image:url(ClothingFashionPic.jpg);
@@ -764,7 +504,7 @@ body.lightStore h6 ion-icon{
   .navigation .L-Shoes-Nav{
     margin: 5px;
     padding: 50px;
-    border: 2px solid gold;
+    border: 2px solid rgba(255, 217, 0, 0.863);
     box-shadow: 0px 3px 10px black;
     border-radius: 10px;
     background-image:url(SHoesStorePic.jpg);
@@ -784,7 +524,7 @@ body.lightStore h6 ion-icon{
   .navigation .L-Sneakers-Nav{
     margin: 5px;
     padding: 50px;
-    border: 2px solid gold;
+    border: 2px solid rgba(255, 217, 0, 0.849);
     box-shadow: 0px 3px 10px black;
     border-radius: 10px;
     background-image:url(SelectSneakersPic.jpg);
@@ -804,7 +544,7 @@ body.lightStore h6 ion-icon{
   .navigation .L-Kitchen-Nav{
     margin: 5px;
     padding: 50px;
-    border: 2px solid gold;
+    border: 2px solid rgba(255, 217, 0, 0.856);
     box-shadow: 0px 3px 10px black;
     border-radius: 10px;
     background-image:url(KitchenToolsPic.webp);
@@ -838,8 +578,8 @@ body.lightStore h6 ion-icon{
   body.lightStore h4{
     border-bottom: 2px solid rgba(153, 205, 50, 0.774);
     box-shadow: 0px 3px 10px black;
-    text-shadow: 2px 2px 4px gold;
-    text-decoration: 1px wavy yellow underline;
+    text-shadow: 2px 2px 4px rgba(255, 217, 0, 0.856);
+    text-decoration: 1px wavy rgba(255, 255, 0, 0.842) underline;
     background-color: rgba(0, 0, 0, 0.651);
 
   }
