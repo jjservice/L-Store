@@ -9,7 +9,7 @@ body{
     text-align: center;
     align-items: center;
     background: linear-gradient(to right,black,darkblue,maroon,black);
-    padding: 20px;
+    padding: 25px;
 }
 body.lightStore{
     background: linear-gradient(to right,black,darkblue,lightgreen,maroon,black);
