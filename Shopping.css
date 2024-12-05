@@ -9,7 +9,8 @@ body{
     text-align: center;
     align-items: center;
     background: linear-gradient(to right,black,darkblue,maroon,black);
-    padding: 25px;
+    padding: 10px;
+    margin: 10px;
 }
 body.lightStore{
     background: linear-gradient(to right,black,darkblue,lightgreen,maroon,black);
@@ -208,6 +209,198 @@ p{
     margin: 0% auto;
     min-width: 300px;
   }
+  
+
+  .container{
+    margin: 0% auto;
+    margin-top: 60px;
+    margin-bottom: 40px;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .Box{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    animation: animate 15s linear infinite;
+}
+@keyframes animate {
+    0% {
+        rotate: 0deg;
+    }
+    100% {
+        rotate: 360deg;
+    }
+}
+.container:hover .Box{
+    animation-play-state: paused;
+}
+.img{
+    position: relative;
+    left: -50%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.img .imgBox{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 217, 0, 0.801);
+    transform: rotate(calc(360deg/8 * var(--i)));
+    transform-origin: 190px;
+    box-shadow: 0px 2px 20px blue;
+}
+body.light .img .imgBox{
+    box-shadow: 0px 2px 15px #ff105e;
+    border: 2px solid rgba(255, 217, 0, 0.863);
+}
+
+.img .imgBox img{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    transform: rotate(calc(-360deg/8 * var(--i)));
+    animation: animateimgBox 15s linear infinite;
+}
+
+.container:hover .img .imgBox img{
+    animation-play-state: paused;
+}
+
+@keyframes animateimgBox {
+    0% {
+        rotate: 0deg;
+    }
+    100% {
+        rotate: -360deg;
+    } 
+}
+
+.container{
+    margin: 0% auto;
+    flex-direction: column;
+    margin-top: 60px;
+    margin-bottom: 40px;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-width: 300px;
+    max-width: 300px;
+  }
+  .Box{
+    margin: 0% auto;
+    width: 300px;
+    height: 300px;
+    justify-content: center;
+    align-items: center;
+    animation: animate 15s linear infinite;
+    min-width: 300px;
+    max-width: 300px;
+}
+@keyframes animate {
+    0% {
+        rotate: 0deg;
+    }
+    100% {
+        rotate: 360deg;
+    }
+}
+.container:hover .Box{
+    animation-play-state: paused;
+}
+.img{
+    position: relative;
+    left: -50%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.img .imgBox{
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 217, 0, 0.801);
+    transform: rotate(calc(360deg/8 * var(--i)));
+    transform-origin: 190px;
+    box-shadow: 0px 2px 8px lightskyblue;
+}
+body.lightStore .img .imgBox{
+   
+    box-shadow: 0px 2px 8px yellowgreen;
+    border: 2px solid rgba(255, 217, 0, 0.863);
+}
+
+.img .imgBox img{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    transform: rotate(calc(-360deg/8 * var(--i)));
+    animation: animateimgBox 15s linear infinite;
+}
+
+.container:hover .img .imgBox img{
+    animation-play-state: paused;
+}
+
+@keyframes animateimgBox {
+    0% {
+        rotate: 0deg;
+    }
+    100% {
+        rotate: -360deg;
+    } 
+}
+h6{
+    position: absolute;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 18px;
+    color: white;
+    text-shadow: 2px 2px 4px lightcoral;
+    background-color: rgba(0, 0, 139, 0.603);
+    box-shadow: 0px 3px 15px lightskyblue;
+    padding: 10px 5px;
+    border-radius: 12px;
+    
+}
+body.lightStore h6{
+    box-shadow: 0px 3px 10px black;
+    background-color: rgba(0, 100, 0, 0.664);
+}
+h6 ion-icon{
+    color: rgba(255, 217, 0, 0.596);
+    font-weight: bold;
+    border-bottom: 2px solid gold;
+    box-shadow: 0px 2px 10px #ff1060e8;
+    border-radius: 50px;
+    background-image: url(lollipop_3GIF.gif);
+    background-size: cover;
+    background-position: center;
+}
+body.lightStore h6 ion-icon{
+    box-shadow: 0px 0px 5px pink;
+}
 }
 
 
