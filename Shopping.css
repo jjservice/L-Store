@@ -484,11 +484,12 @@ body.lightStore h6 ion-icon{
     margin: 5px;
     padding: 50px;
     border: 2px solid gold;
-    box-shadow: 2px 2px 10px maroon;
+    box-shadow: 0px 3px 10px black;
     border-radius: 10px;
     background-image:url(Shirt1pic.webp);
     background-position: center;
     background-size: cover;
+    cursor: pointer;
   }
   .navigation .mlb:hover{
     box-shadow: 2px 2px 10px lightgreen;
@@ -503,16 +504,15 @@ body.lightStore h6 ion-icon{
     margin: 5px;
     padding: 50px;
     border: 2px solid gold;
-    box-shadow: 2px 2px 10px maroon;
+    box-shadow: 0px 3px 10px black;
     border-radius: 10px;
     background-image: url(Shirt2pic.jpg);
     background-position: center;
     background-size: cover;
+    cursor: pointer;
   }
   .navigation .nba:hover{
     color: transparent;
-    box-shadow: 2px 2px 10px lightgreen;
-    background-color: rgba(0, 0, 0, 0.452); 
     transform: scale(1.10);
     transition: 0.5s;
   }
