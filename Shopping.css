@@ -204,6 +204,10 @@ p{
     min-width: 150px;
     
   }
+  h4{
+    margin: 0% auto;
+    min-width: 300px;
+  }
 }
 
 
@@ -525,5 +529,127 @@ body.lightStore h6 ion-icon{
   }
   .navigation .nba ion-icon{
     color: transparent;
+  }
+  .navigation .L-Accesories-Nav{
+    margin: 5px;
+    padding: 50px;
+    border: 2px solid gold;
+    box-shadow: 0px 3px 10px black;
+    border-radius: 10px;
+    background-image:url(AccesoriesPic.png);
+    background-position: center;
+    background-size: cover;
+    cursor: pointer;
+  }
+  .navigation .L-Accesories-Nav:hover{
+    box-shadow: 2px 2px 10px lightgreen;
+    background-color: rgba(255, 217, 0, 0.349);  
+    transform: scale(1.10);
+    transition: 0.5s; 
+  }
+  .navigation .L-Accesories-Nav ion-icon{
+    color: transparent;
+  }
+  .navigation .L-Clothing-Nav{
+    margin: 5px;
+    padding: 50px;
+    border: 2px solid gold;
+    box-shadow: 0px 3px 10px black;
+    border-radius: 10px;
+    background-image:url(ClothingFashionPic.jpg);
+    background-position: center;
+    background-size: cover;
+    cursor: pointer;
+  }
+  .navigation .L-Clothing-Nav:hover{
+    box-shadow: 2px 2px 10px lightgreen;
+    background-color: rgba(255, 217, 0, 0.349);  
+    transform: scale(1.10);
+    transition: 0.5s; 
+  }
+  .navigation .L-Clothing-Nav ion-icon{
+    color: transparent;
+  }
+  .navigation .L-Shoes-Nav{
+    margin: 5px;
+    padding: 50px;
+    border: 2px solid gold;
+    box-shadow: 0px 3px 10px black;
+    border-radius: 10px;
+    background-image:url(SHoesStorePic.jpg);
+    background-position: center;
+    background-size: cover;
+    cursor: pointer;
+  }
+  .navigation .L-Shoes-Nav:hover{
+    box-shadow: 2px 2px 10px lightgreen;
+    background-color: rgba(255, 217, 0, 0.349);  
+    transform: scale(1.10);
+    transition: 0.5s; 
+  }
+  .navigation .L-Shoes-Nav ion-icon{
+    color: transparent;
+  }
+  .navigation .L-Sneakers-Nav{
+    margin: 5px;
+    padding: 50px;
+    border: 2px solid gold;
+    box-shadow: 0px 3px 10px black;
+    border-radius: 10px;
+    background-image:url(SelectSneakersPic.jpg);
+    background-position: center;
+    background-size: cover;
+    cursor: pointer;
+  }
+  .navigation .L-Sneakers-Nav:hover{
+    box-shadow: 2px 2px 10px lightgreen;
+    background-color: rgba(255, 217, 0, 0.349);  
+    transform: scale(1.10);
+    transition: 0.5s; 
+  }
+  .navigation .L-Sneakers-Nav ion-icon{
+    color: transparent;
+  }
+  .navigation .L-Kitchen-Nav{
+    margin: 5px;
+    padding: 50px;
+    border: 2px solid gold;
+    box-shadow: 0px 3px 10px black;
+    border-radius: 10px;
+    background-image:url(KitchenToolsPic.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+  }
+  .navigation .L-Kitchen-Nav:hover{
+    box-shadow: 2px 2px 10px lightgreen;
+    background-color: rgba(255, 217, 0, 0.349);  
+    transform: scale(1.10);
+    transition: 0.5s; 
+  }
+  .navigation .L-Kitchen-Nav ion-icon{
+    color: transparent;
+  }
+  h4{
+    margin: 0% auto;
+    width: 200px;
+    color: white;
+    text-shadow: 2px 2px 2px darkblue;
+    font-size: 25px;
+    background-color: rgba(0, 0, 0, 0.26);
+    padding: 5px;
+    border-bottom: 2px solid wheat;
+    box-shadow: 0px 2px 6px lightskyblue;
+    border-radius: 15px;
+    letter-spacing: 1px;
+    text-decoration: 1px wavy wheat underline;
+  }
+  body.lightStore h4{
+    border-bottom: 2px solid rgba(153, 205, 50, 0.774);
+    box-shadow: 0px 3px 10px black;
+    text-shadow: 2px 2px 4px gold;
+    text-decoration: 1px wavy yellow underline;
+    background-color: rgba(0, 0, 0, 0.651);
+
   }
   
