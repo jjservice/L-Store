@@ -346,13 +346,13 @@ body.light .img .imgBox{
 
 .container{
     margin: 0% auto;
+    flex-direction: column;
     margin-top: 60px;
     margin-bottom: 40px;
-    width: 100%;
+    width: 360px;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
   }
   .Box{
     position: relative;
@@ -454,7 +454,7 @@ body.lightStore h6 ion-icon{
 .navigation{
     margin: 0% auto;
     margin-top: 5px;
-    width: 100%;
+    width: 90%;
     display: flex;
     overflow-x: scroll;
     border: none;
