@@ -189,6 +189,7 @@ p{
    }
    .cart{
     max-width: 600px;
+    height: 40vh;
    }
    #cart-container{
     max-width: 600px;
