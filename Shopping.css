@@ -646,6 +646,26 @@ body.lightStore h6 ion-icon{
   .navigation .L-Watches-Nav ion-icon{
     color: transparent;
   }
+  .navigation .L-Men-Fashion-Nav{
+    margin: 5px;
+    padding: 50px;
+    border: 2px solid rgba(255, 217, 0, 0.856);
+    box-shadow: 0px 3px 10px black;
+    border-radius: 10px;
+    background-image:url(MensFashionLogoPic.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+  }
+  .navigation .L-Men-Fashion-Nav:hover{
+    box-shadow: 2px 2px 10px lightgreen;
+    background-color: rgba(255, 217, 0, 0.349);  
+    transform: scale(1.10);
+    transition: 0.5s; 
+  }
+  .navigation .L-Men-Fashion-Nav ion-icon{
+    color: transparent;
+  }
   h4{
     margin: 0% auto;
     width: 200px;
