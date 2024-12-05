@@ -470,7 +470,7 @@ body.lightStore h6 ion-icon{
   .navigation::-webkit-scrollbar-thumb{
     border: 1px solid gold;
     border-radius: 10px;
-    background: darkblue; 
+    background: rgba(0, 0, 139, 0.562); 
     cursor: grab; 
   }
   .navigation::-webkit-scrollbar-thumb:hover {
