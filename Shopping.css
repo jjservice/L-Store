@@ -209,7 +209,32 @@ p{
     margin: 0% auto;
     min-width: 300px;
   }
-  
+  .container{
+    margin: 0% auto;
+    min-width: 600px;
+  }
+  .Box{
+    display: flex;
+    margin: 0% auto;
+    min-width: 250px;
+    min-height: 250px;
+}
+.img{
+    position: absolute;
+    left: -50%;
+    min-width: 100px;
+    min-height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.img .imgBox{
+    position: absolute;
+    min-width: 80px;
+    min-height: 80px;
+    transform-origin: 190px;
+}
 }
 
 /* Style for the cart container */
