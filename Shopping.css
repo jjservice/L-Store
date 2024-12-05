@@ -606,6 +606,46 @@ body.lightStore h6 ion-icon{
   .navigation .L-RealState-Nav ion-icon{
     color: transparent;
   }
+  .navigation .L-Glasses-Nav{
+    margin: 5px;
+    padding: 50px;
+    border: 2px solid rgba(255, 217, 0, 0.856);
+    box-shadow: 0px 3px 10px black;
+    border-radius: 10px;
+    background-image:url(GlassesPic.avif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+  }
+  .navigation .L-Glasses-Nav:hover{
+    box-shadow: 2px 2px 10px lightgreen;
+    background-color: rgba(255, 217, 0, 0.349);  
+    transform: scale(1.10);
+    transition: 0.5s; 
+  }
+  .navigation .L-Glasses-Nav ion-icon{
+    color: transparent;
+  }
+  .navigation .L-Watches-Nav{
+    margin: 5px;
+    padding: 50px;
+    border: 2px solid rgba(255, 217, 0, 0.856);
+    box-shadow: 0px 3px 10px black;
+    border-radius: 10px;
+    background-image:url(WatchesLogoPic.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+  }
+  .navigation .L-Watches-Nav:hover{
+    box-shadow: 2px 2px 10px lightgreen;
+    background-color: rgba(255, 217, 0, 0.349);  
+    transform: scale(1.10);
+    transition: 0.5s; 
+  }
+  .navigation .L-Watches-Nav ion-icon{
+    color: transparent;
+  }
   h4{
     margin: 0% auto;
     width: 200px;
