@@ -178,7 +178,7 @@ function toggleClassPlayer(){
 }
 
 
-/////Payment Section/////
+/////Payment Section//////////Payment Section////////////////////////////////////////
 
 // Add your publishable key from the Stripe Dashboard
 const stripe = Stripe('your-publishable-key-here');  // Replace with your actual key

@@ -1,0 +1,345 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+body{
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    background: linear-gradient(to right,black,darkblue,maroon,black);
+    padding: 20px;
+}
+body.lightStore{
+    background: linear-gradient(to right,black,darkblue,lightgreen,maroon,black);
+}
+h1{
+    margin: 0% auto;
+    width: 100%;
+    color: white;
+    text-shadow: 2px 2px 4px darkblue;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 2px;
+    font-size: 30px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.096);
+    border-radius: 100%;
+    border: 6px solid rgba(241, 232, 214, 0.13);
+    box-shadow: 0px 2px 10px rgba(135, 206, 250, 0.445);
+    margin-bottom: 10px;
+    cursor: pointer;
+
+}
+h1 ion-icon{
+    border-bottom: 2px solid wheat;
+    border-radius: 10px;
+    box-shadow: 0px 1px 2px darkgreen;
+    background-image: url(lollipop_3GIF.gif);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+body.lightStore h1{
+    background-color: rgba(0, 0, 0, 0.39);
+    border: 4px solid rgba(255, 217, 0, 0.384);
+    box-shadow: 0px 2px 15px black;
+    text-shadow: 2px 2px 4px gold;
+    justify-content: center;
+    align-items: center;
+}
+body.lightStore h1 ion-icon{
+    color: rgba(255, 217, 0, 0.486);
+    border-bottom: 3px solid rgba(64, 64, 250, 0.904);
+   
+}
+h3{
+    color: wheat;
+    text-shadow: 2px 2px 4px darkblue;
+    margin-bottom: 2px;
+   
+}
+h2{
+    margin-bottom: 15px;
+}
+.product-List{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    padding: 10px;
+}
+.product img{
+    margin: 0% auto;
+    width: 150px;
+    height: 150px;
+    border: 2px solid lightskyblue;
+    padding: 2px;
+    border-radius: 15px;
+    box-shadow: 0px 3px 10px white;
+}
+.product img:hover{
+    transform: scale(1.10);
+    transition: 0.5s;
+    cursor: pointer;
+}
+body.lightStore .product img{
+    border: 2px solid rgba(255, 217, 0, 0.616);
+    box-shadow: 0px 5px 20px black;
+}
+.add-to-cart{
+    border: none;
+    padding: 6px;
+    color: white;
+    font-size: 12px;
+    background-color: rgb(0, 139, 19);
+    border-radius: 6px;
+    cursor: pointer;
+}
+.add-to-cart:hover{
+   background-color: darkgreen;
+   transform: scale(1.05);
+   transition: 0.5s;
+}
+#checkout-button{
+    border: none;
+    padding: 6px;
+    color: white;
+    font-size: 15px;
+    background-color: rgb(0, 139, 19);
+    border-radius: 6px;
+    cursor: pointer;
+}
+#checkout-button:hover{
+    background-color: blue;
+    color: white;
+    text-shadow: 2px 2px 4px gold;
+}
+#checkout-button:hover::after{
+    content: "-Now!";
+    display: inline-block;
+    position: relative;
+}
+.cart{
+    list-style: none;
+    text-decoration: none;
+    margin: 0% auto;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.623);
+    border-radius: 7px;
+    border: 1px solid rgba(255, 217, 0, 0.514);
+    box-shadow: 0px 2px 6px darkgray;
+    overflow: scroll;
+    height: 30vh;
+}
+.cart::-webkit-scrollbar{
+    width: 10px;
+    height: 0px;
+    background-color: transparent;
+    border-radius: 20px;
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    border: none;
+    box-shadow: 0px 3px 6px lightskyblue;
+}
+body.lightStore .cart::-webkit-scrollbar{
+    box-shadow: 0px 3px 6px yellowgreen;
+}
+.cart::-webkit-scrollbar-thumb{
+    background-color: rgba(0, 0, 255, 0.795);
+    border-radius: 20px;
+    width: 10px;
+    height: 0px;
+}
+.cart::-webkit-scrollbar-thumb:hover{
+    background-color: green;
+}
+.cart h2{
+    color: white;
+    text-shadow: 2px 2px 4px darkblue;
+    text-decoration: underline;
+    margin-top: -15px;
+}
+#cart-items{
+    color: white;
+    text-shadow: 2px 2px 4px darkblue;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+p{
+    font-size: 20px;
+    margin-bottom: 5px;
+    color: white;
+    text-shadow: 2px 2px 4px gold;
+}
+@media  (min-width: 768px) {
+    .product-List{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 40px;
+        padding: 10px;
+    }
+    h1{
+       margin: 0% auto;
+       font-size: 40px;
+       padding: 5px;
+       max-width: 700px;
+       margin-bottom: 15px;
+   
+   }
+   .cart{
+    max-width: 600px;
+    height: 40vh;
+   }
+   #cart-container{
+    max-width: 600px;
+   }
+   .quantity-input{
+    margin: 0% auto;
+    min-width: 150px;
+    
+  }
+}
+
+
+/* Style for the cart container */
+.cart {
+    display: block; /* Initially show the cart */
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+  }
+  
+  /* Hide cart by default */
+  .cart.hidden {
+    display: none;
+  }
+  
+  /* Style for the "Show/Hide" button */
+  #toggle-cart {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    box-shadow: 0px 2px 10px rgba(135, 206, 250, 0.432);
+    border: 1px solid rgba(255, 217, 0, 0.753);
+    cursor: pointer;
+  }
+  body.lightStore #toggle-cart{
+    background-color: blue;
+    box-shadow: 0px 2px 10px black;
+  }
+  body.lightStore #toggle-cart:hover {
+    background-color: green;
+  }
+  
+  
+  #toggle-cart:hover {
+    background-color: green;
+  }
+
+  .remove-item{
+    border: none;
+    padding: 2px 5px;
+    font-size: 12px;
+    border-radius: 6px;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+  }
+  .quantity-input{
+    margin: 0% auto;
+    border: none;
+    font-size: 15px;
+    text-align: center;
+    padding: 5px;
+    border: 2px solid lightskyblue;
+    border-radius: 6px;
+    width: 50px;
+    
+  }
+
+
+  .container{
+    margin: 0% auto;
+    margin-top: 60px;
+    margin-bottom: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .Box{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    animation: animate 15s linear infinite;
+}
+@keyframes animate {
+    0% {
+        rotate: 0deg;
+    }
+    100% {
+        rotate: 360deg;
+    }
+}
+.container:hover .Box{
+    animation-play-state: paused;
+}
+.img{
+    position: relative;
+    left: -50%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.img .imgBox{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 217, 0, 0.801);
+    transform: rotate(calc(360deg/8 * var(--i)));
+    transform-origin: 190px;
+    box-shadow: 0px 2px 20px blue;
+}
+body.light .img .imgBox{
+    box-shadow: 0px 2px 15px #ff105e;
+    border: 2px solid rgba(255, 217, 0, 0.863);
+}
+
+.img .imgBox img{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    transform: rotate(calc(-360deg/8 * var(--i)));
+    animation: animateimgBox 15s linear infinite;
+}
+
+.container:hover .img .imgBox img{
+    animation-play-state: paused;
+}
+
+@keyframes animateimgBox {
+    0% {
+        rotate: 0deg;
+    }
+    100% {
+        rotate: -360deg;
+    } 
+}
