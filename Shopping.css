@@ -55,6 +55,9 @@ h3{
     margin-bottom: 2px;
    
 }
+h2{
+    margin-bottom: 15px;
+}
 .product-List{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
