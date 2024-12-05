@@ -348,16 +348,20 @@ body.light .img .imgBox{
     flex-direction: column;
     margin-top: 60px;
     margin-bottom: 40px;
-    width: 360px;
+    width: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
   }
   .Box{
-    position: relative;
+    margin: 0% auto;
     width: 300px;
     height: 300px;
+    justify-content: center;
+    align-items: center;
     animation: animate 15s linear infinite;
+    min-width: 300px;
 }
 @keyframes animate {
     0% {
@@ -453,7 +457,7 @@ body.lightStore h6 ion-icon{
 .navigation{
     margin: 0% auto;
     margin-top: 5px;
-    width: 90%;
+    width: 100%;
     display: flex;
     overflow-x: scroll;
     border: none;
