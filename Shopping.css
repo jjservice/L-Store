@@ -82,11 +82,13 @@ h2{
   cursor: pointer;
 }
 #voice-search-btn{
+  margin: 0% auto;
   background-color: transparent;
   position: relative;
-  left: 37.5%;
+  display: flex;
+  right: 156px;
   height: 35px;
-  bottom: 45px;
+  bottom: 35px;
   border-radius: 10px;
   border: none;
   cursor: pointer;
@@ -105,7 +107,7 @@ body.lightStore #voice-search-btn{
 #search-bar {
   margin: 0% auto;
   display: flex;
-  width: 70%;
+  width: 350px;
   padding: 6px;
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 20px;
@@ -116,7 +118,6 @@ body.lightStore #voice-search-btn{
   background-color: rgba(18, 119, 177, 0.438);
   text-align: center;
   box-shadow: 0px 1px 5px lightsalmon;
-  margin-bottom: 10px;
   cursor: pointer;
  
 }
@@ -275,28 +276,22 @@ p{
   h4{
     margin: 0% auto;
     min-width: 300px;
-  }
-  #search-bar {
-    margin: 0% auto;
-    width: 50%;
-    padding: 6px;
-   
-  }
-  #voice-search-btn{
-    background-color: transparent;
-    position: relative;
-    left: 25.8%;
-    height: 35px;
-    bottom: 35px;
-    border-radius: 10px;
-    border: none;
-    cursor: pointer;
-    padding: 2px 4px;
-    font-size: 22px;
-    color: blue;
-    text-shadow: 0px 2px 4px rgba(153, 205, 50, 0.973);
-  }
-
+  } 
+  
+#search-bar {
+  margin: 0% auto;
+  display: flex;
+  width: 550px;
+ 
+}
+#voice-search-btn{
+  margin: 0% auto;
+  position: relative;
+  display: flex;
+  right: 257px;
+  height: 35px;
+  bottom: 35px;
+}
 }
 
 /* Style for the cart container */
