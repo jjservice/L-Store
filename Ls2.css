@@ -251,9 +251,21 @@ body.lightStore .cart::-webkit-scrollbar{
     align-items: center;
     padding: 5px;
     width: 60%;
-    border: 2px solid yellowgreen;
+    border: 2px solid lightskyblue;
     box-shadow: 0px 2px 10px black;
     font-size: 16px;
+    color: white;
+    text-align: 2px 2px 4px gold;
+    border-radius: 10px;
+  }
+  #searchInput:focus{
+    background-color: lightskyblue;
+  }
+  body.lightStore #searchInput{
+    border: 2px solid gold;
+  }
+  body.lightStore #searchInput:focus{
+    background-color: violet;
   }
   #voiceSearchButton{
     position: relative;
@@ -263,7 +275,10 @@ body.lightStore .cart::-webkit-scrollbar{
     font-size: 21px;
     padding: 0;
     border-bottom: 1px solid rgba(255, 217, 0, 0.849);
-    border-radius: 4px;
+    border-radius: 7px;
+    box-shadow: 0px 2px 10px lightskyblue;
+  }
+  body.lightStore #voiceSearchButton{
     box-shadow: 0px 2px 10px yellowgreen;
   }
   input{
@@ -286,10 +301,16 @@ body.lightStore .cart::-webkit-scrollbar{
     border: none;
     background: transparent;
   }
+ 
+
   .navigation::-webkit-scrollbar{
     width: 0%;
   }
   .navigation::-webkit-scrollbar-track {
+    box-shadow: 0px 2px 6px lightskyblue;
+    border-radius: 10px;
+  } 
+  body.lightStore   .navigation::-webkit-scrollbar-track {
     box-shadow: 0px 2px 6px rgba(162, 219, 48, 0.897);
     border-radius: 10px;
   }   
@@ -555,7 +576,7 @@ body.lightStore .cart::-webkit-scrollbar{
       width: 60%;
     }
     #searchInput{
-      width: 30%;
+      width: 40%;
     }
     .product-section{
       display: grid;
