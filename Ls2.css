@@ -10,7 +10,9 @@ body{
     text-align: center;
     height: auto;
     background: linear-gradient(to right,black,darkblue,maroon,black);
-    
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color: white;
   
 }
 body.lightStore{
@@ -18,7 +20,7 @@ body.lightStore{
 }
 h1{
     margin: 0% auto;
-    width: 370px;
+    width: 90%;
     color: white;
     text-shadow: 2px 2px 4px darkblue;
     text-align: center;
@@ -32,8 +34,9 @@ h1{
     border-radius: 100%;
     border: 6px solid rgba(241, 232, 214, 0.13);
     box-shadow: 0px 2px 10px rgba(135, 206, 250, 0.445);
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     cursor: pointer;
+   
 
 }
 h1 ion-icon{
@@ -70,7 +73,7 @@ h2{
 .product-section{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    padding: 10px;
+    padding: 20px;
     border: none;
     justify-content: center;
     align-items: center;
@@ -243,8 +246,17 @@ body.lightStore .cart::-webkit-scrollbar{
 
   #searchInput{
     margin: 0% auto;
+    justify-content: center;
+    align-items: center;
     padding: 5px;
     width: 50%;
+    border: 2px solid yellowgreen;
+    box-shadow: 0px 2px 10px black;
+  }
+  #voiceSearchButton{
+    position: relative;
+    right: 45px;
+    background-color: rgba(8, 182, 8, 0.863);
   }
   input{
     margin: 0% auto;
@@ -528,4 +540,13 @@ body.lightStore .cart::-webkit-scrollbar{
   button{
     border-radius: 6px;
     margin: 1px;
+  }
+
+  @media (min-width: 768px){
+    h1{
+      width: 60%;
+    }
+    #searchInput{
+      width: 30%;
+    }
   }
