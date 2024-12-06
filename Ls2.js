@@ -1,29 +1,53 @@
 // Sample products data with images
 const products = [
-  { 
-      id: 1, 
-      name: "Product 1", 
-      price: 10, 
-      images: ["Image-Car1.avif", "Image-Car2.avif", "Image-Car3.avif", "Image-Car4.avif"]
-  },
-  { 
-      id: 2, 
-      name: "Product 2", 
-      price: 20, 
-      images: ["Image-Car5.avif", "Image-Car6.avif", "Image-Car7.avif", "Image-Car8.avif"]
-  },
-  { 
-      id: 3, 
-      name: "Product 3", 
-      price: 30, 
-      images: ["Image-Car9.avif", "Image-Car10.avif", "img1.jpg", "img2.jpg"]
-  },
-  { 
-      id: 4, 
-      name: "Product 4", 
-      price: 40, 
-      images: ["img3.jpg", "img4.jpg", "img5.jpg", "img6.jpg"]
-  },
+    { 
+        id: 1, 
+        name: "Bulova Oceanographer Men's Automatic-Watch", 
+        price: 40, 
+        images: ["Bulova-Oceanographer-Men's-Automatic-Watch-pic6.avif", "img4.jpg", "img5.jpg", "img6.jpg"]
+    },
+    { 
+        id: 2, 
+        name: "G-Shock Digital Black and Red Watch", 
+        price: 40, 
+        images: ["G-Shock-Digital-Black-Red-Shock--Watch-Pic7.avif", "img4.jpg", "img5.jpg", "img6.jpg"]
+    },
+    { 
+        id: 3, 
+        name: "Bulova Men's Marine Star-Chronograph", 
+        price: 40, 
+        images: ["Bulova-Men's-Marine Star-ChronographPic4.jpg", "img4.jpg", "img5.jpg", "img6.jpg"]
+    },
+    { 
+        id: 4, 
+        name: "V-Code Lady's Watch", 
+        price: 40, 
+        images: ["V-Code-Lady-Watch-Pic.avif", "img4.jpg", "img5.jpg", "img6.jpg"]
+    },
+    { 
+        id: 5, 
+        name: "The Snob Men's Watch", 
+        price: 10, 
+        images: ["The-Watch-Snob-pic3.jpg", "Image-Car2.avif", "Image-Car3.avif", "Image-Car4.avif"]
+    },
+    { 
+        id: 6, 
+        name: "Elegant Cars, Luxuries", 
+        price: 20, 
+        images: ["Image-Car5.avif", "Image-Car6.avif", "Image-Car7.avif", "Image-Car8.avif"]
+    },
+    { 
+        id: 7, 
+        name: "Cars, modern Cars, Luxury", 
+        price: 30, 
+        images: ["Image-Car9.avif", "Image-Car10.avif", "img1.jpg", "img2.jpg"]
+    },
+    { 
+        id: 8, 
+        name: "Asap Rocky", 
+        price: 40, 
+        images: ["img3.jpg", "img4.jpg", "img5.jpg", "img6.jpg"]
+    },
 ];
 
 // Cart array to store added items (with quantities)
