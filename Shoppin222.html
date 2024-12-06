@@ -87,17 +87,18 @@
 
    <div class="navigation">
      
+    <div class="nba"><a href="Ls2.html"><ion-icon name="finger-print"></ion-icon></a></div>
     <div class="L-Clothing-Nav"><a href="Lclothing.html"><ion-icon name="finger-print"></ion-icon></a></div>
     <div class="L-Accesories-Nav"><a href="Laccesories.html"><ion-icon name="finger-print"></ion-icon></a></div>
     <div class="L-Sneakers-Nav"><a href="Lsneakers.html"><ion-icon name="finger-print"></ion-icon></a></div>
     <div class="L-Watches-Nav"><a href="Laccesories.html"><ion-icon name="finger-print"></ion-icon></a></div> 
+    <div class="nba"><a href="Ls2.html"><ion-icon name="finger-print"></ion-icon></a></div>
     <div class="L-Men-Fashion-Nav"><a href="lh2.html"><ion-icon name="finger-print"></ion-icon></a></div>
     <div class="L-Glasses-Nav"><a href="Laccesories.html"><ion-icon name="finger-print"></ion-icon></a></div>
     <div class="L-Shoes-Nav"><a href="Lshoes.html"><ion-icon name="finger-print"></ion-icon></a></div>
     <div class="L-Kitchen-Nav"><a href="Lkitchen.html"><ion-icon name="finger-print"></ion-icon></a></div>
     <div class="L-RealState-Nav"><a href="LRealState.html"><ion-icon name="finger-print"></ion-icon></a></div>
 	<div class="nba"><a href="Ls2.html"><ion-icon name="finger-print"></ion-icon></a></div>
-	
 
     </div>
 
@@ -189,9 +190,15 @@
       }
     }
 
-    //// // Search Barrrr/////////
+//// // Search Barrrr/////////
 function searchProducts() {
   let input = document.getElementById('search-bar').value.toLowerCase();
+  
+  // Remove period from the end of the input if exists
+  if (input.endsWith('.')) {
+    input = input.slice(0, -1);
+  }
+
   let products = document.getElementsByClassName('product');
   let sound = new Audio('Cut-Voice-Notification-Sound.mp3'); // Path to your notification sound file
 
@@ -228,7 +235,13 @@ voiceSearchButton.addEventListener('click', function() {
 
 // Capture the result of the voice recognition
 recognition.onresult = function(event) {
-  const transcript = event.results[0][0].transcript.toLowerCase();  // Get the speech-to-text result
+  let transcript = event.results[0][0].transcript.toLowerCase();  // Get the speech-to-text result
+
+  // Remove period from the end of the transcript if exists
+  if (transcript.endsWith('.')) {
+    transcript = transcript.slice(0, -1);
+  }
+
   searchBar.value = transcript;  // Update the search bar with the transcript
   searchProducts();  // Perform search with the voice input
 };
@@ -237,6 +250,7 @@ recognition.onresult = function(event) {
 recognition.onerror = function(event) {
   console.log("Error occurred in recognition: " + event.error);
 };
+
 
   </script>
   <script src="Shopping222.js"></script>

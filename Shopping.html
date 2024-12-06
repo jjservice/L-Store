@@ -5,18 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="Shopping.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <title>Product List with Image Slider</title>
+  <title>LOLLIPOP CLUB</title>
   <style>
-    /* Style for search bar */
-    #search-bar {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 20px;
-      font-size: 16px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
-
     /* Modal for image slider */
     .modal {
       display: none;
@@ -78,7 +68,8 @@
     <h1 onclick="toggleClassPlayer()">LOLLIP<ion-icon name="color-palette-outline"></ion-icon>P CLUB</h1>
 
       <!-- Search Bar -->
-    <input type="text" id="search-bar" placeholder="Search products..." onkeyup="searchProducts()">
+      <input type="text" id="search-bar" placeholder=".;.LOLLITA CLUB.;." oninput="searchProducts()">
+      <button id="voice-search-btn" aria-label="Voice Search">🎙️</button>      
     <br>
     <!-- Show/Hide Cart Button -->
     <button id="toggle-cart" onclick="toggleCart()"><i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
@@ -96,17 +87,18 @@
 
    <div class="navigation">
      
+    <div class="nba"><a href="Ls2.html"><ion-icon name="finger-print"></ion-icon></a></div>
     <div class="L-Clothing-Nav"><a href="Lclothing.html"><ion-icon name="finger-print"></ion-icon></a></div>
     <div class="L-Accesories-Nav"><a href="Laccesories.html"><ion-icon name="finger-print"></ion-icon></a></div>
     <div class="L-Sneakers-Nav"><a href="Lsneakers.html"><ion-icon name="finger-print"></ion-icon></a></div>
     <div class="L-Watches-Nav"><a href="Laccesories.html"><ion-icon name="finger-print"></ion-icon></a></div> 
+    <div class="nba"><a href="Ls2.html"><ion-icon name="finger-print"></ion-icon></a></div>
     <div class="L-Men-Fashion-Nav"><a href="lh2.html"><ion-icon name="finger-print"></ion-icon></a></div>
     <div class="L-Glasses-Nav"><a href="Laccesories.html"><ion-icon name="finger-print"></ion-icon></a></div>
     <div class="L-Shoes-Nav"><a href="Lshoes.html"><ion-icon name="finger-print"></ion-icon></a></div>
     <div class="L-Kitchen-Nav"><a href="Lkitchen.html"><ion-icon name="finger-print"></ion-icon></a></div>
     <div class="L-RealState-Nav"><a href="LRealState.html"><ion-icon name="finger-print"></ion-icon></a></div>
 	<div class="nba"><a href="Ls2.html"><ion-icon name="finger-print"></ion-icon></a></div>
-	
 
     </div>
 
@@ -198,20 +190,74 @@
       }
     }
 
-    // Search functionality (from previous implementation)
-    function searchProducts() {
-      let input = document.getElementById('search-bar').value.toLowerCase();
-      let products = document.getElementsByClassName('product');
+    // Search Bar function
+function searchProducts() {
+  let input = document.getElementById('search-bar').value.toLowerCase();
 
-      for (let i = 0; i < products.length; i++) {
-        let productName = products[i].getElementsByTagName('h3')[0].textContent.toLowerCase();
-        if (productName.includes(input)) {
-          products[i].style.display = '';  // Show product if it matches search
-        } else {
-          products[i].style.display = 'none';  // Hide product if it doesn't match search
-        }
-      }
+  // Remove period from the end of the input if exists
+  if (input.endsWith('.')) {
+    input = input.slice(0, -1);
+  }
+
+  let products = document.getElementsByClassName('product');
+  
+  // Loop through all products and filter them based on the search input
+  for (let i = 0; i < products.length; i++) {
+    let productName = products[i].getElementsByTagName('h3')[0].textContent.toLowerCase();
+    if (productName.includes(input)) {
+      products[i].style.display = '';  // Show product if it matches search
+    } else {
+      products[i].style.display = 'none';  // Hide product if it doesn't match search
     }
+  }
+}
+
+// Voice search functionality
+const voiceSearchButton = document.getElementById('voice-search-btn');
+const searchBar = document.getElementById('search-bar');
+
+// Check if browser supports SpeechRecognition
+const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+const recognition = new SpeechRecognition();
+
+recognition.lang = 'en-US'; // Set the language for speech recognition
+
+// Initialize sound for notification
+let sound = new Audio('Cut-Voice-Notification-Sound.mp3'); // Path to your notification sound file
+
+// Start voice recognition when the button is clicked
+voiceSearchButton.addEventListener('click', function() {
+  recognition.start();  // Start voice recognition
+  searchBar.value = '';  // Clear the search bar to show voice input
+  // Don't play sound immediately; will play once letters show up in the input
+});
+
+// Capture the result of the voice recognition
+recognition.onresult = function(event) {
+  let transcript = event.results[0][0].transcript.toLowerCase();  // Get the speech-to-text result
+
+  // Remove period from the end of the transcript if exists
+  if (transcript.endsWith('.')) {
+    transcript = transcript.slice(0, -1);
+  }
+
+  searchBar.value = transcript;  // Update the search bar with the transcript
+  searchProducts();  // Perform search with the voice input
+
+  // Play the notification sound only if there is a valid search input in the search bar
+  if (transcript.length > 0) {
+    sound.play();
+  }
+};
+
+// Optional: Handle errors in speech recognition
+recognition.onerror = function(event) {
+  console.log("Error occurred in recognition: " + event.error);
+};
+
+
+
+
   </script>
   <script src="Shopping.js"></script>
   <script src="node.js"></script>

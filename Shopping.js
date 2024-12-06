@@ -236,17 +236,3 @@ async function checkout() {
 // Event listener for the checkout button
 checkoutButton.addEventListener('click', checkout);
 
-////// Search Bar //////////
-function searchProducts() {
-  let input = document.getElementById('search-bar').value.toLowerCase();
-  let products = document.getElementsByClassName('product');
-
-  for (let i = 0; i < products.length; i++) {
-    let productName = products[i].getElementsByTagName('h3')[0].textContent.toLowerCase();
-    if (productName.includes(input)) {
-      products[i].style.display = '';  // Show product if it matches search
-    } else {
-      products[i].style.display = 'none';  // Hide product if it doesn't match search
-    }
-  }
-}
