@@ -41,6 +41,30 @@ function updateCart() {
 
   // Save the updated cart back to localStorage
   localStorage.setItem('cart', JSON.stringify(cart));
+
+  // Update the cart item count on the toggle cart button
+  updateCartItemCount(cart);
+}
+
+// Function to update the cart item count indicator on the toggle button
+function updateCartItemCount(cart) {
+  const cartItemCount = cart.reduce((total, item) => total + item.quantity, 0); // Get total items in the cart
+  const badge = toggleCartButton.querySelector('.cart-badge');
+
+  if (cartItemCount > 0) {
+    // Show the badge and update the count
+    if (!badge) {
+      const newBadge = document.createElement('span');
+      newBadge.classList.add('cart-badge');
+      toggleCartButton.appendChild(newBadge);
+    }
+    toggleCartButton.querySelector('.cart-badge').textContent = cartItemCount;
+  } else {
+    // Hide the badge if no items are in the cart
+    if (badge) {
+      badge.remove();
+    }
+  }
 }
 
 // Function to handle adding items to the cart
@@ -66,7 +90,7 @@ function addToCart(event) {
   // Update the cart in localStorage
   localStorage.setItem('cart', JSON.stringify(cart));
 
-  // Update the cart display
+  // Update the cart display and item count
   updateCart();
 }
 
@@ -169,16 +193,14 @@ cartItemsContainer.addEventListener('input', (event) => {
 // Initialize the cart display on page load
 updateCart();
 
-
-////Light Section////
+//// Light Section ////
 
 function toggleClassPlayer(){
   const body = document.querySelector('body');
   body.classList.toggle('lightStore');
 }
 
-
-/////Payment Section//////////Payment Section////////////////////////////////////////
+///// Payment Section ///////
 
 // Add your publishable key from the Stripe Dashboard
 const stripe = Stripe('your-publishable-key-here');  // Replace with your actual key
@@ -235,4 +257,7 @@ async function checkout() {
 
 // Event listener for the checkout button
 checkoutButton.addEventListener('click', checkout);
+
+
+
 
