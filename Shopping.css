@@ -10,8 +10,7 @@ body{
     background: linear-gradient(to right,black,darkblue,maroon,black);
     padding-top: 15px;
     padding-bottom: 15px;
- 
-    
+    color: wheat;   
 }
 body.lightStore{
     background: linear-gradient(to right,black,darkblue,lightgreen,maroon,black);
@@ -85,9 +84,9 @@ h2{
 #voice-search-btn{
   background-color: transparent;
   position: relative;
-  left: 31.5%;
+  left: 37.5%;
   height: 35px;
-  bottom: 35px;
+  bottom: 45px;
   border-radius: 10px;
   border: none;
   cursor: pointer;
@@ -117,6 +116,7 @@ body.lightStore #voice-search-btn{
   background-color: rgba(18, 119, 177, 0.438);
   text-align: center;
   box-shadow: 0px 1px 5px lightsalmon;
+  margin-bottom: 10px;
   cursor: pointer;
  
 }
@@ -285,7 +285,7 @@ p{
   #voice-search-btn{
     background-color: transparent;
     position: relative;
-    left: 23%;
+    left: 25.8%;
     height: 35px;
     bottom: 35px;
     border-radius: 10px;
@@ -390,6 +390,7 @@ body.lightStore h6 ion-icon{
 .navigation{
     margin: 0% auto;
     margin-top: 5px;
+    margin-bottom: 10px;
     width: 100%;
     display: flex;
     overflow-x: scroll;
