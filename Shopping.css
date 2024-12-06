@@ -651,5 +651,33 @@ body.lightStore h6 ion-icon{
     background-color: rgba(0, 0, 0, 0.651);
   }
 
+  #in-Stock{
+    font-size: 16px;
+  }
+  #Price-tag{
+    margin: 0% auto;
+    font-size: 20px;
+    background-color: rgba(0, 0, 0, 0.411);
+    border-radius: 10px;
+    width: 80px;
+    padding: 5px;
+    margin-bottom: 5px;
+    border: 1px solid rgba(153, 205, 50, 0.781);
+  }
+  .product{
+    margin: 0% auto;
+    padding: 10px;
+    border: 1px solid lightskyblue;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.096);
+  }
+  body.lightStore .product{
+    border: none;
+    border-left: 1px solid red;
+    border-right: 1px solid blue;
+    background-color: rgba(68, 5, 31, 0.24);
+
+  }
+
   
   
