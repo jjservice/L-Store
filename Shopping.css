@@ -4,20 +4,21 @@
     box-sizing: border-box;
 }
 body{
-    flex-direction: column;
     justify-content: center;
     text-align: center;
     align-items: center;
     background: linear-gradient(to right,black,darkblue,maroon,black);
-    padding: 10px;
-    margin: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+ 
+    
 }
 body.lightStore{
     background: linear-gradient(to right,black,darkblue,lightgreen,maroon,black);
 }
 h1{
     margin: 0% auto;
-    width: 100%;
+    width: 90%;
     color: white;
     text-shadow: 2px 2px 4px darkblue;
     text-align: center;
@@ -31,7 +32,7 @@ h1{
     border-radius: 100%;
     border: 6px solid rgba(241, 232, 214, 0.13);
     box-shadow: 0px 2px 10px rgba(135, 206, 250, 0.445);
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     cursor: pointer;
 
 }
@@ -65,6 +66,79 @@ h3{
 }
 h2{
     margin-bottom: 15px;
+}
+#language-selector{
+  position: relative;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 14px;
+  color: rgba(180, 153, 1, 0.904);
+  right: 45px;
+  bottom: 10px;
+  margin-bottom: 2px;
+  border-radius: 6px;
+  background-color: rgba(0, 0, 139, 0.342);
+  color: wheat;
+  border: none;
+  text-shadow: 1px 1px 2px yellowgreen;
+  cursor: pointer;
+}
+#voice-search-btn{
+  background-color: transparent;
+  position: relative;
+  left: 150px;
+  height: 40px;
+  bottom: 5px;
+  border-radius: 15px;
+  border: none;
+  cursor: pointer;
+  padding: 2px 4px;
+  font-size: 22px;
+  color: blue;
+  text-shadow: 0px 2px 4px rgba(153, 205, 50, 0.973);
+}
+#voice-search-btn:hover{
+  box-shadow: 0px 2px 10px gold;
+  border-radius: 10px;
+}
+body.lightStore #voice-search-btn{
+  border-bottom: 2px solid rgba(153, 205, 50, 0.863);
+  box-shadow: 0px 2px 5px rgba(224, 40, 77, 0.822);
+}
+body.lightStore #voice-search-btn i:hover{
+  font-size: 20px;
+  color: rgb(235, 62, 96);
+  padding: 5px;
+  
+}
+#search-bar {
+  margin: 0% auto;
+  display: flex;
+  width: 70%;
+  padding: 6px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 20px;
+  color: white;
+  text-shadow: 1px 1px 2px gold;
+  border: 1px solid rgba(153, 205, 50, 0.788);
+  border-radius: 10px;
+  background-color: rgba(18, 119, 177, 0.438);
+  text-align: center;
+  box-shadow: 0px 1px 5px lightsalmon;
+  margin-bottom: -35px;
+  cursor: pointer;
+ 
+}
+#search-bar:focus{
+  background-color: rgba(4, 14, 87, 0.322);
+  transition: 0.5s;
+}
+body.lightStore #search-bar:focus{
+  background-color: rgba(119, 0, 0, 0.267);
+  transition: 0.5s;
+}
+body.lightStore #search-input{
+  background-color: rgba(221, 57, 112, 0.233);
+  transition: 0.5s;
 }
 .product-List{
     display: grid;
@@ -127,7 +201,7 @@ body.lightStore .product img{
     list-style: none;
     text-decoration: none;
     margin: 0% auto;
-    width: 100%;
+    width: 80%;
     padding: 10px;
     text-align: center;
     justify-content: center;
@@ -179,6 +253,7 @@ p{
     text-shadow: 2px 2px 4px gold;
 }
 @media  (min-width: 768px) {
+
     .product-List{
         display: grid;
         grid-template-columns: repeat(4, 1fr);
@@ -194,7 +269,7 @@ p{
    
    }
    .cart{
-    max-width: 600px;
+    min-width: 50%;
     height: 40vh;
    }
    #cart-container{
@@ -209,32 +284,27 @@ p{
     margin: 0% auto;
     min-width: 300px;
   }
-  .container{
+  #search-bar {
     margin: 0% auto;
-    min-width: 600px;
+    margin-bottom: -30px;
+    width: 50%;
+    padding: 6px;
+   
   }
-  .Box{
-    display: flex;
-    margin: 0% auto;
-    min-width: 250px;
-    min-height: 250px;
-}
-.img{
-    position: absolute;
-    left: -50%;
-    min-width: 100px;
-    min-height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  #voice-search-btn{
+    background-color: transparent;
+    position: relative;
+    left: 300px;
+    height: 40px;
+    bottom: 10px;
+    border-radius: 15px;
+    border: none;
     cursor: pointer;
-}
-.img .imgBox{
-    position: absolute;
-    min-width: 80px;
-    min-height: 80px;
-    transform-origin: 190px;
-}
+    padding: 2px 4px;
+    font-size: 22px;
+    color: blue;
+    text-shadow: 0px 2px 4px rgba(153, 205, 50, 0.973);
+  }
 }
 
 /* Style for the cart container */
@@ -252,7 +322,6 @@ p{
   
   /* Style for the "Show/Hide" button */
   #toggle-cart {
-    margin-top: 10px;
     padding: 10px 20px;
     background-color: blue;
     color: white;
@@ -295,98 +364,6 @@ p{
     width: 50px;
     
   }
-
-
-
-
-
-  .container{
-    margin: 0% auto;
-    flex-direction: column;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    min-width: 200px;
-  }
-  .Box{
-    margin: 0% auto;
-    justify-content: center;
-    align-items: center;
-    width: 300px;
-    height: 300px;
-    animation: animate 15s linear infinite;
-}
-@keyframes animate {
-    0% {
-        rotate: 0deg;
-    }
-    100% {
-        rotate: 360deg;
-    }
-}
-.container:hover .Box{
-    animation-play-state: paused;
-}
-
-
-.img .imgBox img{
-    margin: 0% auto;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-    transform: rotate(calc(-360deg/8 * var(--i)));
-    animation: animateimgBox 15s linear infinite;
-}
-body.light .img .imgBox{
-    box-shadow: 0px 2px 15px #ff105e;
-    border: 2px solid rgba(255, 217, 0, 0.863);
-}
-.img{
-    position: relative;
-    left: -40%;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-}
-.img .imgBox{
-    position: absolute;
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    border: 2px solid rgba(255, 217, 0, 0.801);
-    transform: rotate(calc(360deg/8 * var(--i)));
-    transform-origin: 160px;
-    box-shadow: 0px 2px 8px lightskyblue;
-}
-
-.container:hover .img .imgBox img{
-    animation-play-state: paused;
-}
-
-@keyframes animateimgBox {
-    0% {
-        rotate: 0deg;
-    }
-    100% {
-        rotate: -360deg;
-    } 
-}
-  
-body.lightStore .img .imgBox{
-    box-shadow: 0px 2px 8px yellowgreen;
-    border: 2px solid rgba(255, 217, 0, 0.863);
-}
-
-
 h6{
     position: absolute;
     font-family: Georgia, 'Times New Roman', Times, serif;
