@@ -1,92 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="Shopping.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Ls2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Shopping Cart</title>
+    <style>
+        
+/* Styling for the product image slider */
+.image-slider {
+    position: relative;
+    display: inline-block;
+}
+
+.slider-image {
+    width: 100%;
+    height: auto;
+}
+
+.slider-controls {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.slider-controls button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.slider-controls button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+    </style>
 </head>
 <body class="lightStore">
-  <h1 onclick="toggleClassPlayer()">LOLLIP<ion-icon name="color-palette-outline"></ion-icon>P CLUB</h1>
-
-  <!-- Show/Hide Cart Button -->
-  <button id="toggle-cart" onclick="toggleCart()"><i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
-
-  <div class="cart" id="cart-container">
-    <h2>Your Cart</h2>
-    <ul id="cart-items"></ul>
-    <p>Total: $<span id="total-price">0</span></p>
-
-    <!-- Checkout Button -->
-    <button id="checkout-button" onclick="checkout()">Check-Out</button>
-  </div>
-
-  <ul class="product-List">
-
-    <!--Product List -->
-    <div class="product">
-      <img src="Shirt1pic.webp">
-      <h3>Young & Rich - Men's T-shirt</h3>
-      <p>Price: $14.50</p>
-      <button class="add-to-cart" data-product="Product 1" data-price="14.50">Add to Cart</button>
-    </div>
-
+ 
+    <h1 onclick="toggleClassPlayer()">LOLLIP<ion-icon name="color-palette-outline"></ion-icon>P CLUB</h1>
+    <input type="text" id="searchInput" placeholder="Search for products..." oninput="searchProducts()">
+    <button id="voiceSearchButton">🎤</button> <br>
     
-    <div class="product">
-      <img src="Vara pump - Women.webp">
-      <h3>Vara pump - Ferragamo Women's shoes</h3>
-      <p>Price: $15</p>
-      <button class="add-to-cart" data-product="Product 2" data-price="15">Add to Cart</button>
+  <!-- Button to toggle the cart visibility -->
+  <button id="toggleCartButton" onclick="toggleCartVisibility()">Show Cart</button>
+
+ <!-- Cart section (initially hidden) -->
+ <div id="cartSection" class="cart"  style="display: none;">
+    <h2>Your Cart</h2>
+    <div id="cartItems"></div>
+    <div>
+        Total: $<span id="totalPrice">0</span>
+    </div>
+    <button id="checkoutButton" style="display: none;" onclick="renderCheckout()">Checkout</button>
+ </div>
+
+     
+   <!-- Navigation Section -->
+
+   <div class="navigation">
+     
+    <div class="L-Clothing-Nav"><a href="Lclothing.html"><ion-icon name="finger-print"></ion-icon></a></div>
+    <div class="L-Accesories-Nav"><a href="Laccesories.html"><ion-icon name="finger-print"></ion-icon></a></div>
+    <div class="L-Sneakers-Nav"><a href="Lsneakers.html"><ion-icon name="finger-print"></ion-icon></a></div>
+    <div class="L-Watches-Nav"><a href="Laccesories.html"><ion-icon name="finger-print"></ion-icon></a></div> 
+    <div class="L-Men-Fashion-Nav"><a href="lh2.html"><ion-icon name="finger-print"></ion-icon></a></div>
+    <div class="L-Glasses-Nav"><a href="Laccesories.html"><ion-icon name="finger-print"></ion-icon></a></div>
+    <div class="L-Shoes-Nav"><a href="Lshoes.html"><ion-icon name="finger-print"></ion-icon></a></div>
+    <div class="L-Kitchen-Nav"><a href="Lkitchen.html"><ion-icon name="finger-print"></ion-icon></a></div>
+    <div class="L-RealState-Nav"><a href="LRealState.html"><ion-icon name="finger-print"></ion-icon></a></div>
+		<div class="nba"><a href="Ls2.html"><ion-icon name="finger-print"></ion-icon></a></div>
+	
+
     </div>
 
-    <div class="product">
-      <img src="Shirt2pic.jpg">
-      <h3>Converse T-shirt</h3>
-      <p>Price: $12.75</p>
-      <button class="add-to-cart" data-product="Product 3" data-price="12.50">Add to Cart</button>
-    </div>
-
-    <div class="product">
-      <img src="NIKE AIR MAX SHOES - NIKE AIR MAX 97 (2).png">
-      <h3>Nike Air Max Shoes - Nike Air Max 97</h3>
-      <p>Price: $15</p>
-      <button class="add-to-cart" data-product="Product 4" data-price="15">Add to Cart</button>
-    </div>
-
-    <div class="product">
-      <img src="2 Chainz x Versace Chain Reaction Shoes.webp">
-      <h3>2 Chainz x Versace Chain Reaction Shoes</h3>
-      <p>Price: $10.75</p>
-      <button class="add-to-cart" data-product="Product 5" data-price="10.75">Add to Cart</button>
-    </div>
-
-    <div class="product">
-      <img src="Nike Air Max 97 By You Custom Men's Shoes 1.png">
-      <h3>Nike Air Max 97 By You Custom Men's Shoes</h3>
-      <p>Price: $20</p>
-      <button class="add-to-cart" data-product="Product 6" data-price="20">Add to Cart</button>
-    </div>
-
-    <div class="product">
-      <img src="Shirt3pic.webp">
-      <h3>Design Urban - Men's T-shirt</h3>
-      <p>Price: $25</p>
-      <button class="add-to-cart" data-product="Product 7" data-price="25">Add to Cart</button>
+    <div class="product-section" id="productSection">
+        <!-- Products will be dynamically generated here -->
     </div>
 
 
-    <div class="product">
-      <img src="Prada Men's America's Cup Patent Leather Patchwork Sneakers, Mandarin Orange Silver, Men's, 14D,.webp">
-      <h3>Prada Men's Sneaker,  Cup Patent Leather, Mandarin Orange Silver</h3>
-      <p>Price: $10</p>
-      <button class="add-to-cart" data-product="Product 8" data-price="10">Add to Cart</button>
-    </div>
-
-    <!-- Add more products as needed -->
-  </ul>
+    <script src="https://js.stripe.com/v3/"></script>
 </body>
-<script src="Shopping.js"></script>
+<script src="Ls2.js"></script>
 <script src="node.js"></script>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
