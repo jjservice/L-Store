@@ -10,7 +10,8 @@ body{
     background: linear-gradient(to right,black,darkblue,maroon,black);
     padding-top: 15px;
     padding-bottom: 15px;
-    color: wheat;   
+    color: wheat; 
+    transition: 1s;  
 }
 body.lightStore{
     background: linear-gradient(to right,black,darkblue,lightgreen,maroon,black);
