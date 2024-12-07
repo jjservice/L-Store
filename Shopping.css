@@ -300,6 +300,27 @@ p{
 }
 }
 
+
+#toggle-cart {
+  position: relative;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background-color: green;
+  color: white;
+  font-size: 12px;
+  padding: 5px;
+  border-radius: 50%;
+  min-width: 20px;
+  text-align: center;
+}
+body.lightStore .cart-badge{
+  background-color: magenta;
+  
+}
 /* Style for the cart container */
 .cart {
     display: block; /* Initially show the cart */
@@ -685,22 +706,7 @@ body.lightStore h6 ion-icon{
 
   }
   
-  #toggle-cart {
-    position: relative;
-  }
-  
-  .cart-badge {
-    position: absolute;
-    top: -5px;
-    right: -10px;
-    background-color: red;
-    color: white;
-    font-size: 12px;
-    padding: 5px;
-    border-radius: 50%;
-    min-width: 18px;
-    text-align: center;
-  }
+ 
   
 
   

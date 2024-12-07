@@ -103,6 +103,7 @@
 
  <!-- Product List -->
 <ul class="product-List">
+
   <div class="product">
     <img src="Shirt1pic.webp" onclick="openModal(0)">
     <h3>Young & Rich - Men's T-shirt</h3>
@@ -110,7 +111,7 @@
     <label for="quantity1">Qty:</label>
     <input type="number" id="quantity1" name="quantity" min="1" value="1" max="10">
     <p id="in-Stock">In Stock: <span id="stock1">10</span></p> <!-- Example stock value -->
-    <button class="add-to-cart" data-product="Product 1" data-price="14.50">Add to Cart</button>
+    <button class="add-to-cart" data-product="Young & Rich - Men's T-shirt" data-price="14.50">Add to Cart</button>
   </div>
 
   <div class="product">
@@ -120,7 +121,7 @@
     <label for="quantity2">Qty:</label>
     <input type="number" id="quantity2" name="quantity" min="1" value="1" max="5">
     <p id="in-Stock">In Stock: <span id="stock2">5</span></p> <!-- Example stock value -->
-    <button class="add-to-cart" data-product="Product 2" data-price="15">Add to Cart</button>
+    <button class="add-to-cart" data-product="Vara pump - Ferragamo Women's shoes" data-price="15">Add to Cart</button>
   </div>
 
   <div class="product">
@@ -130,7 +131,7 @@
     <label for="quantity3">Qty:</label>
     <input type="number" id="quantity3" name="quantity" min="1" value="1" max="8">
     <p id="in-Stock">In Stock: <span id="stock3">8</span></p> <!-- Example stock value -->
-    <button class="add-to-cart" data-product="Product 3" data-price="12.50">Add to Cart</button>
+    <button class="add-to-cart" data-product="Converse T-shirt - Converse T-shirt" data-price="12.50">Add to Cart</button>
   </div>
 
   <div class="product">
@@ -140,8 +141,48 @@
     <label for="quantity4">Qty:</label>
     <input type="number" id="quantity4" name="quantity" min="1" value="1" max="6">
     <p id="in-Stock">In Stock: <span id="stock4">6</span></p> <!-- Example stock value -->
-    <button class="add-to-cart" data-product="Product 4" data-price="15">Add to Cart</button>
+    <button class="add-to-cart" data-product="Nike Air Max Shoes - Nike Air Max 97" data-price="15">Add to Cart</button>
   </div>
+
+    <div class="product">
+      <img src="Shirt1pic.webp" onclick="openModal(4)">
+      <h3>Young & Rich - Men's T-shirt</h3>
+      <p id="Price-tag">$14.50</p>
+      <label for="quantity1">Qty:</label>
+      <input type="number" id="quantity1" name="quantity" min="1" value="1" max="10">
+      <p id="in-Stock">In Stock: <span id="stock1">10</span></p> <!-- Example stock value -->
+      <button class="add-to-cart" data-product="Young & Rich - Men's T-shirt" data-price="14.50">Add to Cart</button>
+    </div>
+  
+    <div class="product">
+      <img src="Vara pump - Women.webp" onclick="openModal(5)">
+      <h3>Vara pump - Ferragamo Women's shoes</h3>
+      <p id="Price-tag">$15</p>
+      <label for="quantity2">Qty:</label>
+      <input type="number" id="quantity2" name="quantity" min="1" value="1" max="5">
+      <p id="in-Stock">In Stock: <span id="stock2">5</span></p> <!-- Example stock value -->
+      <button class="add-to-cart" data-product="Vara pump - Ferragamo Women's shoes" data-price="15">Add to Cart</button>
+    </div>
+  
+    <div class="product">
+      <img src="Shirt2pic.jpg" onclick="openModal(6)">
+      <h3>Converse T-shirt - Converse T-shirt</h3>
+      <p id="Price-tag">$12.75</p>
+      <label for="quantity3">Qty:</label>
+      <input type="number" id="quantity3" name="quantity" min="1" value="1" max="8">
+      <p id="in-Stock">In Stock: <span id="stock3">8</span></p> <!-- Example stock value -->
+      <button class="add-to-cart" data-product="Converse T-shirt - Converse T-shirt" data-price="12.50">Add to Cart</button>
+    </div>
+  
+    <div class="product">
+      <img src="NIKE AIR MAX SHOES - NIKE AIR MAX 97 (2).png" onclick="openModal(7)">
+      <h3>Nike Air Max Shoes - Nike Air Max 97</h3>
+      <p id="Price-tag">$15</p>
+      <label for="quantity4">Qty:</label>
+      <input type="number" id="quantity4" name="quantity" min="1" value="1" max="6">
+      <p id="in-Stock">In Stock: <span id="stock4">6</span></p> <!-- Example stock value -->
+      <button class="add-to-cart" data-product="Nike Air Max Shoes - Nike Air Max 97" data-price="15">Add to Cart</button>
+    </div>
 
   <!-- Add other products here similarly -->
 </ul>
@@ -159,10 +200,14 @@
   <script>
     const productImages = [
       ["Shirt1pic.webp", "Shirt3pic.webp", "Shirt2pic.jpg", "SHoesStorePic.jpg"], // Product 1 images
-      ["VaraPump1.webp", "VaraPump2.webp", "VaraPump3.webp", "VaraPump4.webp"], // Product 2 images
-      ["ConverseShirt1.jpg", "ConverseShirt2.jpg", "ConverseShirt3.jpg", "ConverseShirt4.jpg"], // Product 3 images
-      ["NikeAirMax1.png", "NikeAirMax2.png", "NikeAirMax3.png", "NikeAirMax4.png"], // Product 4 images
-      // Add arrays for other products as needed
+      ["The-Best-G-Shock-Watches-Watch8.webp", "The-Watch-Snob-pic3.jpg", "V-Code-Lady-Watch-Pic.avif", "V-Code-Lady-Watch-Pic2.avif"], // Product 2 images
+      ["ConverseShirt1.jpg", "img1.jpg", "img2.jpg", "img3.jpg"], // Product 3 images
+      ["img6.jpg", "img4.jpg", "img3.jpg", "Image-Car10.avif"],////4////
+      ["Shirt1pic.webp", "Shirt3pic.webp", "Shirt2pic.jpg", "SHoesStorePic.jpg"], // Product 5 images
+      ["The-Best-G-Shock-Watches-Watch8.webp", "The-Watch-Snob-pic3.jpg", "V-Code-Lady-Watch-Pic.avif", "V-Code-Lady-Watch-Pic2.avif"], // Product 2 images
+      ["ConverseShirt1.jpg", "img1.jpg", "img2.jpg", "img3.jpg"], // Product 7 images
+      ["img6.jpg", "img4.jpg", "img3.jpg", "Image-Car10.avif"],////8///
+     
     ];
 
     let currentProductIndex = -1;
