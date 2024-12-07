@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="Shopping.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" />
+  <title>LOLLIPOP CLUB</title>
+  <style>
+    /* Add styles for user dashboard */
+    .dashboard, .product-list, .cart {
+      display: none;
+    }
+
+    .dashboard.show, .product-list.show, .cart.show {
+      display: block;
+    }
+
+    .product {
+      margin: 20px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      text-align: center;
+    }
+
+    .product img {
+      width: 150px;
+      height: auto;
+    }
+
+    .product button {
+      margin-top: 10px;
+    }
+
+    #add-product-form {
+      margin-top: 20px;
+    }
+
+    #add-product-form input {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- User Dashboard -->
+  <div id="user-dashboard" class="dashboard">
+    <h2>Welcome, <span id="user-name">User</span></h2>
+    <button onclick="logout()">Logout</button>
+
+    <h3>Your Products</h3>
+    <div id="user-products"></div>
+    <button onclick="openAddProductForm()">Add New Product</button>
+
+    <h3>Buy Products</h3>
+    <div id="available-products"></div>
+  </div>
+
+  <!-- Add Product Form (for sellers) -->
+  <div id="add-product-form" style="display:none;">
+    <h3>Add New Product</h3>
+    <form id="product-form">
+      <input type="text" id="product-name" placeholder="Product Name" required>
+      <input type="number" id="product-price" placeholder="Product Price" required>
+      <input type="number" id="product-quantity" placeholder="Product Quantity" required>
+      <input type="file" id="product-image" accept="image/*" required>
+      <button type="submit">Add Product</button>
+    </form>
+    <button onclick="closeAddProductForm()">Cancel</button>
+  </div>
+
+  <!-- Cart and Checkout -->
+  <div class="cart" id="cart-container">
+    <h2>Your Cart</h2>
+    <ul id="cart-items"></ul>
+    <p>Total: $<span id="total-price">0</span></p>
+    <button onclick="checkout()">Checkout</button>
+  </div>
+
+  <!-- Product List (for buyers) -->
+  <div id="product-list" class="product-list show">
+    <h2>Available Products</h2>
+    <div id="products"></div>
+  </div>
+
+  <script>
+    // Simulate a logged-in user for demonstration
+    let currentUser = {
+      name: 'John Doe',
+      id: 'user123',
+      products: [] // User's products (for sellers)
+    };
+
+    // Simulate available products for buyers
+    const availableProducts = [
+      { name: 'T-Shirt', price: 10, quantity: 5, image: 'shirt.jpg' },
+      { name: 'Shoes', price: 20, quantity: 3, image: 'shoes.jpg' }
+    ];
+
+    // Show user dashboard after login
+    function showDashboard() {
+      document.getElementById('user-name').textContent = currentUser.name;
+      document.getElementById('user-dashboard').classList.add('show');
+      showUserProducts();
+      showAvailableProducts();
+    }
+
+    // Display user's own products
+    function showUserProducts() {
+      const userProductsContainer = document.getElementById('user-products');
+      userProductsContainer.innerHTML = '';
+      currentUser.products.forEach(product => {
+        const productDiv = document.createElement('div');
+        productDiv.classList.add('product');
+        productDiv.innerHTML = `
+          <img src="${product.image}" alt="${product.name}">
+          <h3>${product.name}</h3>
+          <p>$${product.price}</p>
+          <p>In stock: ${product.quantity}</p>
+        `;
+        userProductsContainer.appendChild(productDiv);
+      });
+    }
+
+    // Display available products for buyers
+    function showAvailableProducts() {
+      const productsContainer = document.getElementById('products');
+      productsContainer.innerHTML = '';
+      availableProducts.forEach((product, index) => {
+        const productDiv = document.createElement('div');
+        productDiv.classList.add('product');
+        productDiv.innerHTML = `
+          <img src="${product.image}" alt="${product.name}">
+          <h3>${product.name}</h3>
+          <p>$${product.price}</p>
+          <button onclick="addToCart(${index})">Add to Cart</button>
+        `;
+        productsContainer.appendChild(productDiv);
+      });
+    }
+
+    // Add new product to user's products
+    document.getElementById('product-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const name = document.getElementById('product-name').value;
+      const price = parseFloat(document.getElementById('product-price').value);
+      const quantity = parseInt(document.getElementById('product-quantity').value);
+      const image = URL.createObjectURL(document.getElementById('product-image').files[0]);
+
+      const newProduct = { name, price, quantity, image };
+      currentUser.products.push(newProduct);
+      showUserProducts();
+      closeAddProductForm();
+    });
+
+    // Show add product form
+    function openAddProductForm() {
+      document.getElementById('add-product-form').style.display = 'block';
+    }
+
+    // Close add product form
+    function closeAddProductForm() {
+      document.getElementById('add-product-form').style.display = 'none';
+    }
+
+    // Add product to cart (for buyers)
+    function addToCart(index) {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const product = availableProducts[index];
+      cart.push(product);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      updateCartDisplay();
+    }
+
+    // Update cart display
+    function updateCartDisplay() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const cartItemsContainer = document.getElementById('cart-items');
+      const totalPriceElement = document.getElementById('total-price');
+      let totalPrice = 0;
+
+      cartItemsContainer.innerHTML = '';
+      cart.forEach((item, index) => {
+        const listItem = document.createElement('li');
+        listItem.innerHTML = `
+          <img src="${item.image}" alt="${item.name}" width="50" height="50">
+          ${item.name} - $${item.price}
+          <button onclick="removeFromCart(${index})">Remove</button>
+        `;
+        cartItemsContainer.appendChild(listItem);
+        totalPrice += item.price;
+      });
+
+      totalPriceElement.textContent = totalPrice.toFixed(2);
+    }
+
+    // Remove item from cart
+    function removeFromCart(index) {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.splice(index, 1);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      updateCartDisplay();
+    }
+
+    // Checkout function
+    function checkout() {
+      alert("Proceeding to checkout...");
+      localStorage.removeItem('cart');
+      updateCartDisplay();
+    }
+
+    // Logout function
+    function logout() {
+      currentUser = null;
+      document.getElementById('user-dashboard').classList.remove('show');
+      alert("You have logged out.");
+    }
+
+    // Initializing the page
+    showDashboard();
+    updateCartDisplay();
+  </script>
+
+  <script src="node.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
