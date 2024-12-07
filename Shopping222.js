@@ -21,13 +21,15 @@ function updateCart() {
   cart.forEach((item, index) => {
     const listItem = document.createElement('li');
 
-    // Display the product, price, and quantity with an input field to edit quantity
-    listItem.innerHTML = `${item.product} - $${item.price} 
-                          <input type="number" class="quantity-input" 
-                                 value="${item.quantity}" 
-                                 data-index="${index}" min="1">
-                          x $${item.price} = $${(item.quantity * item.price).toFixed(2)}
-                          <button class="remove-item" data-index="${index}">Remove</button>`;
+    // Display the product image, name, price, and quantity
+    listItem.innerHTML = `
+    <img src="${item.image}" alt="${item.product}">
+    <div class="product-name">${item.product}</div>
+    $${item.price} 
+    <input type="number" class="quantity-input" value="${item.quantity}" data-index="${index}" min="1">
+    x $${item.price} = $${(item.quantity * item.price).toFixed(2)}
+    <button class="remove-item" data-index="${index}">Remove</button>
+  `;
 
     // Append the list item to the cart
     cartItemsContainer.appendChild(listItem);
@@ -67,32 +69,34 @@ function updateCartItemCount(cart) {
   }
 }
 
-// Function to handle adding items to the cart
-function addToCart(event) {
-  const button = event.target;
-  const product = button.getAttribute('data-product');
-  const price = parseFloat(button.getAttribute('data-price'));
+    // Function to handle adding items to the cart
+    function addToCart(event) {
+      const button = event.target;
+      const product = button.getAttribute('data-product');
+      const price = parseFloat(button.getAttribute('data-price'));
+      const image = button.getAttribute('data-image');
 
-  // Retrieve the current cart from localStorage
-  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      // Retrieve the current cart from localStorage or initialize it as an empty array
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-  // Check if the product is already in the cart
-  const existingItem = cart.find(item => item.product === product);
+      // Check if the product is already in the cart
+      const existingItem = cart.find(item => item.product === product);
 
-  if (existingItem) {
-    // If product already exists, increase the quantity
-    existingItem.quantity += 1;
-  } else {
-    // If product doesn't exist, add it with a quantity of 1
-    cart.push({ product, price, quantity: 1 });
-  }
+      if (existingItem) {
+        // If the product already exists, increase the quantity
+        existingItem.quantity += 1;
+      } else {
+        // Otherwise, add the new product to the cart
+        cart.push({ product, price, quantity: 1, image });
+      }
 
-  // Update the cart in localStorage
-  localStorage.setItem('cart', JSON.stringify(cart));
+      // Save the updated cart to localStorage
+      localStorage.setItem('cart', JSON.stringify(cart));
 
-  // Update the cart display and item count
-  updateCart();
-}
+      // Update the cart display
+      updateCart();
+    }
+
 
 // Function to handle removing items from the cart
 function removeItem(event) {
@@ -257,3 +261,7 @@ async function checkout() {
 
 // Event listener for the checkout button
 checkoutButton.addEventListener('click', checkout);
+
+
+
+
