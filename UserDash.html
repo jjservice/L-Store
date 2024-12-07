@@ -86,7 +86,7 @@
     <button onclick="openAddProductForm()">Add New Product</button>
 
     <h3>Buy Products</h3>
-    <div id="available-products"></div>
+    <button onclick="redirectToProductList()">View Products</button>
   </div>
 
   <!-- Add Product Form (for sellers) -->
@@ -214,28 +214,9 @@
       });
     }
 
-    // Add new product to user's products
-    document.getElementById('product-form').addEventListener('submit', function(event) {
-      event.preventDefault();
-      const name = document.getElementById('product-name').value;
-      const price = parseFloat(document.getElementById('product-price').value);
-      const quantity = parseInt(document.getElementById('product-quantity').value);
-      const image = URL.createObjectURL(document.getElementById('product-image').files[0]);
-
-      const newProduct = { name, price, quantity, image };
-      currentUser.products.push(newProduct);
-      showUserProducts();
-      closeAddProductForm();
-    });
-
-    // Show add product form
-    function openAddProductForm() {
-      document.getElementById('add-product-form').style.display = 'block';
-    }
-
-    // Close add product form
-    function closeAddProductForm() {
-      document.getElementById('add-product-form').style.display = 'none';
+    // Redirect to product list (main page)
+    function redirectToProductList() {
+      window.location.href = 'Shopping.html'; // Redirect to your main page (adjust the file name accordingly)
     }
 
     // Logout function
@@ -254,4 +235,3 @@
 
 </body>
 </html>
-
