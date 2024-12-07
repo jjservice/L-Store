@@ -7,45 +7,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" />
   <title>LOLLIPOP CLUB</title>
   <style>
-    .dashboard, .product-list, .cart, .login-form, .register-form {
-      display: none;
-    }
-
-    .dashboard.show, .product-list.show, .cart.show {
-      display: block;
-    }
-
-    .product {
-      margin: 20px;
-      padding: 10px;
-      border: 1px solid #ddd;
-      text-align: center;
-    }
-
-    .product img {
-      width: 150px;
-      height: auto;
-    }
-
-    .product button {
-      margin-top: 10px;
-    }
-
-    #add-product-form {
-      margin-top: 20px;
-    }
-
-    #add-product-form input {
-      margin: 5px 0;
-    }
-
-    .login-form input, .register-form input {
-      margin: 10px;
-    }
-
-    .login-form button, .register-form button {
-      margin-top: 10px;
-    }
+    /* Your existing styles here */
   </style>
 </head>
 <body>
@@ -116,7 +78,8 @@
   </div>
 
   <script>
-    const users = []; // Store registered users
+    // Load users from localStorage if available
+    let users = JSON.parse(localStorage.getItem('users')) || [];
     let currentUser = null; // This will store the logged-in user
     const availableProducts = []; // Store available products for the product list
 
@@ -145,6 +108,8 @@
         currentUser = user;
         showDashboard();
         document.getElementById('login-error').style.display = 'none';
+        // Save currentUser to localStorage for auto-login in future
+        localStorage.setItem('currentUser', JSON.stringify(currentUser));
       } else {
         document.getElementById('login-error').textContent = 'Invalid username or password!';
       }
@@ -163,6 +128,7 @@
         } else {
           const newUser = { username, password, name: username, id: `user${Date.now()}`, products: [] };
           users.push(newUser);
+          localStorage.setItem('users', JSON.stringify(users)); // Save users to localStorage
           alert('Registration successful! Please log in.');
           showLoginForm();
         }
@@ -257,8 +223,20 @@
     // Logout function
     function logout() {
       currentUser = null;
+      localStorage.removeItem('currentUser'); // Remove current user from localStorage
       showLoginForm();
     }
+
+    // Check if user is logged in (auto-login)
+    window.onload = function() {
+      const savedUser = JSON.parse(localStorage.getItem('currentUser'));
+      if (savedUser) {
+        currentUser = savedUser;
+        showDashboard();
+      } else {
+        showLoginForm();
+      }
+    };
 
     // Initially show the login form
     showLoginForm();
@@ -270,4 +248,5 @@
 
 </body>
 </html>
+
 
