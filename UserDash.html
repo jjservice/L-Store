@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" />
   <title>LOLLIPOP CLUB</title>
   <style>
-    /* Add styles for user dashboard */
     .dashboard, .product-list, .cart, .login-form, .register-form {
       display: none;
     }
@@ -119,6 +118,7 @@
   <script>
     const users = []; // Store registered users
     let currentUser = null; // This will store the logged-in user
+    const availableProducts = []; // Store available products for the product list
 
     // Show the login form
     function showLoginForm() {
@@ -177,7 +177,6 @@
       document.getElementById('user-name').textContent = currentUser.name;
       document.getElementById('user-dashboard').style.display = 'block';
       showUserProducts();
-      showAvailableProducts();
     }
 
     // Display user's own products
@@ -214,9 +213,35 @@
       });
     }
 
+    // Add new product to user's products
+    document.getElementById('product-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const name = document.getElementById('product-name').value;
+      const price = parseFloat(document.getElementById('product-price').value);
+      const quantity = parseInt(document.getElementById('product-quantity').value);
+      const image = URL.createObjectURL(document.getElementById('product-image').files[0]);
+
+      const newProduct = { name, price, quantity, image };
+      currentUser.products.push(newProduct);
+      availableProducts.push(newProduct); // Add product to the main product list as well
+      showUserProducts();
+      showAvailableProducts();
+      closeAddProductForm();
+    });
+
+    // Show add product form
+    function openAddProductForm() {
+      document.getElementById('add-product-form').style.display = 'block';
+    }
+
+    // Close add product form
+    function closeAddProductForm() {
+      document.getElementById('add-product-form').style.display = 'none';
+    }
+
     // Redirect to product list (main page)
     function redirectToProductList() {
-      window.location.href = 'Shopping.html'; // Redirect to your main page (adjust the file name accordingly)
+      window.location.href = 'Shopping.html'; // Adjust to your main HTML file path
     }
 
     // Logout function
@@ -235,3 +260,4 @@
 
 </body>
 </html>
+
