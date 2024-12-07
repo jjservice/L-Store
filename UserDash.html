@@ -183,7 +183,7 @@
     function showUserProducts() {
       const userProductsContainer = document.getElementById('user-products');
       userProductsContainer.innerHTML = '';
-      currentUser.products.forEach(product => {
+      currentUser.products.forEach((product, index) => {
         const productDiv = document.createElement('div');
         productDiv.classList.add('product');
         productDiv.innerHTML = `
@@ -191,26 +191,36 @@
           <h3>${product.name}</h3>
           <p>$${product.price}</p>
           <p>In stock: ${product.quantity}</p>
+          <button onclick="editProduct(${index})">Edit</button>
+          <button onclick="deleteProduct(${index})">Delete</button>
         `;
         userProductsContainer.appendChild(productDiv);
       });
     }
 
-    // Display available products for buyers
-    function showAvailableProducts() {
-      const productsContainer = document.getElementById('products');
-      productsContainer.innerHTML = '';
-      availableProducts.forEach((product, index) => {
-        const productDiv = document.createElement('div');
-        productDiv.classList.add('product');
-        productDiv.innerHTML = `
-          <img src="${product.image}" alt="${product.name}">
-          <h3>${product.name}</h3>
-          <p>$${product.price}</p>
-          <button onclick="addToCart(${index})">Add to Cart</button>
-        `;
-        productsContainer.appendChild(productDiv);
-      });
+    // Edit product function
+    function editProduct(index) {
+      const product = currentUser.products[index];
+      document.getElementById('product-name').value = product.name;
+      document.getElementById('product-price').value = product.price;
+      document.getElementById('product-quantity').value = product.quantity;
+      document.getElementById('product-image').files[0] = product.image; // Handle image if needed
+      // Update product logic
+      document.getElementById('product-form').onsubmit = function(event) {
+        event.preventDefault();
+        product.name = document.getElementById('product-name').value;
+        product.price = parseFloat(document.getElementById('product-price').value);
+        product.quantity = parseInt(document.getElementById('product-quantity').value);
+        product.image = URL.createObjectURL(document.getElementById('product-image').files[0]);
+        showUserProducts();
+        closeAddProductForm();
+      };
+    }
+
+    // Delete product function
+    function deleteProduct(index) {
+      currentUser.products.splice(index, 1);
+      showUserProducts();
     }
 
     // Add new product to user's products
