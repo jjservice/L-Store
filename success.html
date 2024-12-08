@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Successful</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 50px;
+        }
+        .success-message {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .button {
+            background-color: #008CBA;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="success-message">
+        <h1>Thank you for your purchase!</h1>
+        <p>Your payment was successfully processed.</p>
+        <p>Your order is now being processed and will be shipped soon.</p>
+    </div>
+
+    <a href="/" class="button">Back to Shopping</a>
+
+    <script>
+        // Retrieve session_id from URL and use it to fetch order details (optional)
+        const urlParams = new URLSearchParams(window.location.search);
+        const sessionId = urlParams.get('session_id');
+        console.log('Session ID:', sessionId);
+
+        // Optionally, you can fetch additional session details using the sessionId via your backend
+        if (sessionId) {
+            fetch(`/get-order-details?session_id=${sessionId}`)
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Order details:', data);
+                    // You can update the page with order details here
+                })
+                .catch(error => console.error('Error fetching order details:', error));
+        }
+    </script>
+
+</body>
+</html>
