@@ -207,7 +207,7 @@ function toggleClassPlayer(){
 ///// Payment Section ///////
 
 // Add your publishable key from the Stripe Dashboard
-const stripe = Stripe('your-publishable-key-here');  // Replace with your actual key
+const stripe = Stripe('pk_live_51QTSb2LPa32ZluPp1YadZwNsFhMmn4a5u1sYzy0bgbIL1yD1LFuGXQcn3CgEBAwaBucY7RK5GwT51oEo44hDNbvo001nhm4Exe');  // Replace with your actual key
 
 // Function to handle checkout process with Stripe
 async function checkout() {
