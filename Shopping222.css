@@ -88,6 +88,8 @@ h2{
 .nav-info a{
   text-decoration: none;
   text-align: center;
+  align-items: center;
+  justify-content: center;
   font-size: 12px;
   font-family: Georgia, 'Times New Roman', Times, serif;
   color: rgba(245, 222, 179, 0.842);
@@ -99,6 +101,7 @@ h2{
   margin: 5px;
   border-radius: 10px;
 }
+
 body.lightStore .nav-info a:hover{
   border-bottom: 8px solid palevioletred;
   transition: 0.5s;
