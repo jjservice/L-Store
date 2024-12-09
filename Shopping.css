@@ -191,6 +191,9 @@ body.lightStore #search-input{
 background-color: rgba(221, 57, 112, 0.233);
 transition: 0.5s;
 }
+.product{
+  text-align: center;
+}
 .product-List2{
 display: grid;
 grid-template-columns: repeat(2, 1fr);
@@ -232,6 +235,7 @@ margin: 0% auto;
 display: flex;
 flex-wrap: row;
 width: 370px;
+text-align: center;
 align-items: center;
 justify-content: space-between;
 border-right: 4px solid red;
@@ -1001,7 +1005,37 @@ padding: 5px;
 }
 
 } 
-
+.Buy-Now-Tag{
+  margin: 0% auto;
+  display: flex;
+  text-decoration: none;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 4px gold;
+  border: 2px solid blue;
+  background-color: rgba(0, 0, 0, 0.603);
+  box-shadow: 0px 2px 6px lightskyblue;
+  padding: 5px;
+  border-radius: 10px;
+}
+body.lightStore .Buy-Now-Tag{
+  border-top: 2px solid yellowgreen;
+  border-bottom:2px solid yellowgreen;
+  border-left: 2px solid red;
+  border-right: 2px solid blue;
+  background-color: rgba(0, 0, 0, 0.603);
+  box-shadow: 0px 2px 6px yellowgreen;
+}
+.product input{
+  margin: 0% auto;
+  text-align: center;
+  align-items: center;
+  width: 55px;
+  border: none;
+  padding: 5px;
+  border-radius: 6px;
+}
 
 
 
