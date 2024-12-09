@@ -309,7 +309,7 @@ body.lightStore .product img{
     border: 1px solid rgba(255, 217, 0, 0.514);
     box-shadow: 0px 2px 6px darkgray;
     overflow: scroll;
-    height: 30vh;
+    height: 20vh;
 }
 .cart::-webkit-scrollbar{
     width: 10px;
@@ -336,6 +336,7 @@ body.lightStore .cart::-webkit-scrollbar{
     color: white;
     text-shadow: 2px 2px 4px darkblue;
     text-decoration: underline;
+    font-size: 20px;
     margin-top: -15px;
 }
 #cart-items{
@@ -370,8 +371,12 @@ p{
    }
    .cart{
     min-width: 50%;
-    height: 40vh;
+    height: 200px;
    }
+   .cart h2{
+    font-size: 25px;
+ 
+}
    #cart-container{
     max-width: 600px;
    }
@@ -422,32 +427,38 @@ body.lightStore .cart-badge{
   background-color: magenta;
   
 }
-/* Style for the cart container */
+
 .cart {
-    display: block; /* Initially show the cart */
+    display: block; 
     padding: 20px;
     border: 1px solid #ccc;
     margin-top: 10px;
-  }
-  .cart img{
-    width: 50px;
-    height: 50px;
-    padding: 2px;
-    border: 1px solid lightskyblue;
-    box-shadow: 0px 2px 6px white;
-    border-radius: 8px;
   }
   body.lightStore .cart img{
     border: 1px solid gold;
     box-shadow: 0px 2px 6px yellowgreen;
   }
   
-  /* Hide cart by default */
+  
   .cart.hidden {
     display: none;
   }
+  #cart-items img{
+    width:  30px;
+    height: 30px;
+    padding: 2px;
+    border: 1px solid lightskyblue;
+    box-shadow: 0px 2px 6px white;
+    border-radius: 8px;
+  }
+  #cart-items{
+    font-size: 15px;
+  }
+  #cart-items input{
+    width: 50px;
+    padding: 0;
+  }
   
-  /* Style for the "Show/Hide" button */
   #toggle-cart {
     padding: 10px 20px;
     background-color: blue;
@@ -941,6 +952,21 @@ h5 ion-icon{
 }
 body.lightStore h5 ion-icon{
   box-shadow: 0px 2px 15px blue;
+}
+#cart-items img{
+  width:  50px;
+  height: 50px;
+  padding: 2px;
+  border: 1px solid lightskyblue;
+  box-shadow: 0px 2px 6px white;
+  border-radius: 8px;
+}
+#cart-items{
+  font-size: 18px;
+}
+#cart-items input{
+  width: 100px;
+  padding: 5px;
 }
  
 } 
