@@ -838,6 +838,8 @@ body.lightStore h4{
 }
 
 #in-Stock{
+  color: wheat;
+  text-shadow: 2px 2px 2px darkblue;
   font-size: 16px;
 }
 #Price-tag{
@@ -1040,6 +1042,28 @@ body.lightStore .Buy-Now-Tag{
   padding: 5px;
   border-radius: 6px;
 }
+.Offer-Tag{
+  margin: 0% auto;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.466);
+  box-shadow: 0px 2px 6px lightskyblue;
+  padding: 5px;
+  border-top: 2px solid lightskyblue;
+  border-radius: 6px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  cursor: pointer;
+}
+body.lightStore .Offer-Tag{
+  color: white;
+  text-shadow: 2px 2px 4px gold;
+  box-shadow: 0px 2px 6px darkgreen;
+  border-top: 2px solid yellowgreen;
+}
+
 
 
 
