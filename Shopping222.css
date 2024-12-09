@@ -100,12 +100,12 @@ h2{
   border-radius: 10px;
 }
 body.lightStore .nav-info a:hover{
-  border-bottom: 6px solid yellowgreen;
+  border-bottom: 8px solid palevioletred;
   transition: 0.5s;
 
 }
 .nav-info a:hover{
-  border-bottom: 6px solid lightskyblue;
+  border-bottom: 8px solid palevioletred;
   transition: 0.5s;
 
 }
