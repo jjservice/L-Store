@@ -878,6 +878,7 @@ body.lightStore .product{
   .nav-info{
     position: absolute;
     left: 5px;
+    top: 155px;
     gap: 10px;
     opacity: 90%;
     
