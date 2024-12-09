@@ -261,3 +261,4 @@ async function checkout() {
 
 // Event listener for the checkout button
 checkoutButton.addEventListener('click', checkout);
+
