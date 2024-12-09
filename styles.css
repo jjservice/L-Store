@@ -16,32 +16,33 @@ body {
     background-color: #333;
     padding: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    
-  }
-  
-  .navbar a {
+}
+
+.navbar a {
     text-decoration: none;
     color: white;
     font-size: 18px;
     padding: 10px 15px;
     transition: 1s;
     animation: moveNavbar 30s linear infinite;
-   
-    
-  }
-  
-  .navbar a:hover {
+    animation-play-state: paused; /* Pause the animation by default */
+}
+
+/* Hover effect for navbar links */
+.navbar a:hover {
     color: #ff5722;
-  }
-  
-  @keyframes moveNavbar {
+    animation-play-state: running; /* Resume the animation when hovered */
+}
+
+@keyframes moveNavbar {
     100% {
       transform: translateX(100%);
     }
     100% {
       transform: translateX(500px);
     }
-  }
+}
+
   
   
   
