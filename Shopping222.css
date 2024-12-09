@@ -827,6 +827,16 @@ body.lightStore h6 ion-icon{
     width: 0px;
   }
   @media (min-width: 768px) {
+    .nav-info{
+      position: absolute;
+      left: 5px;
+      gap: 10px;
+      opacity: 90%;
+      
+    }
+    .nav-info a{
+      margin: 5px;
+    }
     .container{
       margin: 0% auto;
       display: block;
