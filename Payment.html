@@ -29,24 +29,28 @@
     </div>
   </div> 
   <script>
-    const express = require('express');
-const stripe = require('stripe')('sk_live_...zVj4');
+
+const express = require('express');
+const stripe = require('stripe')('sk_live_...zVj4');  // Use your live secret key here
 const app = express();
 const port = 3000;
 
-app.use(express.json());
+app.use(express.json());  // Middleware to parse JSON bodies
 
 app.post('/create-payment-intent', async (req, res) => {
     try {
+        // Create a PaymentIntent on the server-side
         const paymentIntent = await stripe.paymentIntents.create({
-            amount: 2000, // The amount in cents (for example, $20.00)
+            amount: 2000, // Amount in cents (e.g., $20.00)
             currency: 'usd',
             payment_method_types: ['card'],
         });
 
+        // Send the clientSecret to the frontend
         res.json({ clientSecret: paymentIntent.client_secret });
     } catch (error) {
-        res.status(500).send({ error: error.message });
+        // Handle server-side errors
+        res.status(500).json({ error: error.message });
     }
 });
 
