@@ -80,7 +80,15 @@
       <!-- Search Bar -->
       <input type="text" id="search-bar" placeholder=".;.LOLLITA CLUB.;." oninput="searchProducts()">
       <button id="voice-search-btn" aria-label="Voice Search">🎙️</button>      
-    <!-- Show/Hide Cart Button -->
+       
+      <!-- Navigation Info -->
+      <div class="nav-info">
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="#faq">FAQ</a>
+      </div>
+    
+      <!-- Show/Hide Cart Button -->
     <button id="toggle-cart" onclick="toggleCart()"><i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
   
     <div class="cart" id="cart-container">
@@ -237,6 +245,26 @@
     <input type="number" id="quantity1" name="quantity" min="1" value="1" max="5">
     <p id="in-Stock">In Stock: <span id="stock2">5</span></p> <!-- Example stock value -->
     <button class="add-to-cart" data-product="2 Chainz x Versace Chain Reaction Shoes" data-price="15" data-image="2 Chainz x Versace Chain Reaction Shoes.webp">Add to Cart</button>
+  </div>
+
+  <div class="product">
+    <img src="Shirt1pic.webp" onclick="openModal(0)">
+    <h3>Young & Rich - Men's T-shirt - Men's T-shirt</h3>
+    <p id="Price-tag">$14.50</p>
+    <label for="quantity1">Qty:</label>
+    <input type="number" id="quantity1" name="quantity" min="1" value="1" max="10">
+    <p id="in-Stock">In Stock: <span id="stock1">10</span></p> <!-- Example stock value -->
+    <button class="add-to-cart" data-product="Young & Rich - Men's T-shirt" data-price="14.50" data-image="Shirt1pic.webp">Add to Cart</button>
+  </div>
+
+  <div class="product">
+    <img src="Shirt1pic.webp" onclick="openModal(0)">
+    <h3>Young & Rich - Men's T-shirt - Men's T-shirt</h3>
+    <p id="Price-tag">$14.50</p>
+    <label for="quantity1">Qty:</label>
+    <input type="number" id="quantity1" name="quantity" min="1" value="1" max="10">
+    <p id="in-Stock">In Stock: <span id="stock1">10</span></p> <!-- Example stock value -->
+    <button class="add-to-cart" data-product="Young & Rich - Men's T-shirt" data-price="14.50" data-image="Shirt1pic.webp">Add to Cart</button>
   </div>
 
 
