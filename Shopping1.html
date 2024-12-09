@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="Shopping.css">
+  <link rel="stylesheet" href="Shopping222.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <title>LOLLIPOP CLUB</title>
   <style>
@@ -33,6 +33,16 @@
       height: auto;
       display: block;
       margin: 0 auto;
+      border-radius: 10px;
+      padding: 2px;
+      border: 2px solid lightskyblue;
+      border-radius: 8px;
+      box-shadow: 0px 2px 10px white;
+    }
+    body.lightStore .modal-content img {
+      border: 2px solid gold;
+      border-radius: 8px;
+      box-shadow: 0px 2px 10px yellowgreen;
     }
 
     /* Next and Previous buttons */
@@ -86,20 +96,61 @@
 
    <div class="navigation">
      
-    <div class="nba"><a href="Shoppin222.html"><ion-icon name="finger-print"></ion-icon></a></div>
     <div class="L-Clothing-Nav"><a href="Lclothing.html"><ion-icon name="finger-print"></ion-icon></a></div>
     <div class="L-Accesories-Nav"><a href="Laccesories.html"><ion-icon name="finger-print"></ion-icon></a></div>
     <div class="L-Sneakers-Nav"><a href="Lsneakers.html"><ion-icon name="finger-print"></ion-icon></a></div>
     <div class="L-Watches-Nav"><a href="Laccesories.html"><ion-icon name="finger-print"></ion-icon></a></div> 
     <div class="nba"><a href="Ls2.html"><ion-icon name="finger-print"></ion-icon></a></div>
+    <div class="L-RealState-Nav"><a href="LRealState.html"><ion-icon name="finger-print"></ion-icon></a></div>
     <div class="L-Men-Fashion-Nav"><a href="lh2.html"><ion-icon name="finger-print"></ion-icon></a></div>
     <div class="L-Glasses-Nav"><a href="Laccesories.html"><ion-icon name="finger-print"></ion-icon></a></div>
     <div class="L-Shoes-Nav"><a href="Lshoes.html"><ion-icon name="finger-print"></ion-icon></a></div>
     <div class="L-Kitchen-Nav"><a href="Lkitchen.html"><ion-icon name="finger-print"></ion-icon></a></div>
     <div class="L-RealState-Nav"><a href="LRealState.html"><ion-icon name="finger-print"></ion-icon></a></div>
-	<div class="nba"><a href="Ls2.html"><ion-icon name="finger-print"></ion-icon></a></div>
+	  <div class="nba"><a href="Ls2.html"><ion-icon name="finger-print"></ion-icon></a></div>
 
     </div>
+
+    <div class="container">
+      <h5>LOLLIP<ion-icon name="headset-sharp"></ion-icon>P</h5> 
+      <div class="Box">
+          <div class="img">
+
+              <div class="imgBox" style="--i:1;">
+                  <a href="https://www.youtube.com/watch?v=BnOIlMTZY9U"><img src="img1.jpg"></a>
+              </div>
+
+              <div class="imgBox" style="--i:2;">
+                  <a href="https://www.youtube.com/watch?v=rQGocYoUsY0"><img src="img2.jpg"></a>
+              </div>
+
+              <div class="imgBox" style="--i:3;">
+                  <a href="https://www.youtube.com/watch?v=wctnQQ-RLek"><img src="img3.jpg"></a>
+              </div>
+
+              <div class="imgBox" style="--i:4;">
+                  <img src="img4.jpg">
+              </div>
+
+              <div class="imgBox" style="--i:5;">
+                  <img src="img5.jpg">
+              </div>
+
+              <div class="imgBox" style="--i:6;">
+                  <img src="img6.jpg">
+              </div>
+
+              <div class="imgBox" style="--i:7;">
+                  <img src="img7.jpg">
+              </div>
+
+              <div class="imgBox" style="--i:8;">
+                  <img src="img8.jpg">
+              </div>
+
+          </div>
+      </div>
+  </div>
 
  <!-- Product List -->
 <ul class="product-List">
@@ -111,78 +162,79 @@
     <label for="quantity1">Qty:</label>
     <input type="number" id="quantity1" name="quantity" min="1" value="1" max="10">
     <p id="in-Stock">In Stock: <span id="stock1">10</span></p> <!-- Example stock value -->
-    <button class="add-to-cart" data-product="Young & Rich - Men's T-shirt" data-price="14.50">Add to Cart</button>
+    <button class="add-to-cart" data-product="Young & Rich - Men's T-shirt" data-price="14.50" data-image="Shirt1pic.webp">Add to Cart</button>
   </div>
 
   <div class="product">
-    <img src="Vara pump - Women.webp" onclick="openModal(1)">
+    <img src="Bulova-Futuro-Men's-Gold-Diamond-BlackPic5.jpg" onclick="openModal(1)">
+    <h3>Bulova-Futuro-Men's-Gold-Diamond-Black</h3>
+    <p id="Price-tag">$14.50</p>
+    <label for="quantity1">Qty:</label>
+    <input type="number" id="quantity1" name="quantity" min="1" value="1" max="10">
+    <p id="in-Stock">In Stock: <span id="stock1">5</span></p> <!-- Example stock value -->
+    <button class="add-to-cart" data-product="Bulova Futuro Men's Gold Diamond-Black" data-price="14.50" data-image="Bulova-Futuro-Men's-Gold-Diamond-BlackPic5.jpg">Add to Cart</button>
+  </div>
+
+  <div class="product">
+    <img src="Vara pump - Women.webp" onclick="openModal(2)">
     <h3>Vara pump - Ferragamo Women's shoes</h3>
     <p id="Price-tag">$15</p>
     <label for="quantity2">Qty:</label>
-    <input type="number" id="quantity2" name="quantity" min="1" value="1" max="5">
+    <input type="number" id="quantity1" name="quantity" min="1" value="1" max="5">
     <p id="in-Stock">In Stock: <span id="stock2">5</span></p> <!-- Example stock value -->
-    <button class="add-to-cart" data-product="Vara pump - Ferragamo Women's shoes" data-price="15">Add to Cart</button>
+    <button class="add-to-cart" data-product="Vara pump - Ferragamo Women's shoes" data-price="15" data-image="Vara pump - Women.webp">Add to Cart</button>
   </div>
 
   <div class="product">
-    <img src="Shirt2pic.jpg" onclick="openModal(2)">
-    <h3>Converse T-shirt - Converse T-shirt</h3>
-    <p id="Price-tag">$12.75</p>
-    <label for="quantity3">Qty:</label>
-    <input type="number" id="quantity3" name="quantity" min="1" value="1" max="8">
-    <p id="in-Stock">In Stock: <span id="stock3">8</span></p> <!-- Example stock value -->
-    <button class="add-to-cart" data-product="Converse T-shirt - Converse T-shirt" data-price="12.50">Add to Cart</button>
-  </div>
-
-  <div class="product">
-    <img src="NIKE AIR MAX SHOES - NIKE AIR MAX 97 (2).png" onclick="openModal(3)">
-    <h3>Nike Air Max Shoes - Nike Air Max 97</h3>
+    <img src="The-Watch-Snob-pic3.jpg" onclick="openModal(3)">
+    <h3>The Watch Snob</h3>
     <p id="Price-tag">$15</p>
-    <label for="quantity4">Qty:</label>
-    <input type="number" id="quantity4" name="quantity" min="1" value="1" max="6">
-    <p id="in-Stock">In Stock: <span id="stock4">6</span></p> <!-- Example stock value -->
-    <button class="add-to-cart" data-product="Nike Air Max Shoes - Nike Air Max 97" data-price="15">Add to Cart</button>
+    <label for="quantity2">Qty:</label>
+    <input type="number" id="quantity1" name="quantity" min="1" value="1" max="5">
+    <p id="in-Stock">In Stock: <span id="stock2">5</span></p> <!-- Example stock value -->
+    <button class="add-to-cart" data-product="The Watch Snob" data-price="15" data-image="The-Watch-Snob-pic3.jpg">Add to Cart</button>
   </div>
 
-    <div class="product">
-      <img src="Shirt1pic.webp" onclick="openModal(4)">
-      <h3>Young & Rich - Men's T-shirt</h3>
-      <p id="Price-tag">$14.50</p>
-      <label for="quantity1">Qty:</label>
-      <input type="number" id="quantity1" name="quantity" min="1" value="1" max="10">
-      <p id="in-Stock">In Stock: <span id="stock1">10</span></p> <!-- Example stock value -->
-      <button class="add-to-cart" data-product="Young & Rich - Men's T-shirt" data-price="14.50">Add to Cart</button>
-    </div>
-  
-    <div class="product">
-      <img src="Vara pump - Women.webp" onclick="openModal(5)">
-      <h3>Vara pump - Ferragamo Women's shoes</h3>
-      <p id="Price-tag">$15</p>
-      <label for="quantity2">Qty:</label>
-      <input type="number" id="quantity2" name="quantity" min="1" value="1" max="5">
-      <p id="in-Stock">In Stock: <span id="stock2">5</span></p> <!-- Example stock value -->
-      <button class="add-to-cart" data-product="Vara pump - Ferragamo Women's shoes" data-price="15">Add to Cart</button>
-    </div>
-  
-    <div class="product">
-      <img src="Shirt2pic.jpg" onclick="openModal(6)">
-      <h3>Converse T-shirt - Converse T-shirt</h3>
-      <p id="Price-tag">$12.75</p>
-      <label for="quantity3">Qty:</label>
-      <input type="number" id="quantity3" name="quantity" min="1" value="1" max="8">
-      <p id="in-Stock">In Stock: <span id="stock3">8</span></p> <!-- Example stock value -->
-      <button class="add-to-cart" data-product="Converse T-shirt - Converse T-shirt" data-price="12.50">Add to Cart</button>
-    </div>
-  
-    <div class="product">
-      <img src="NIKE AIR MAX SHOES - NIKE AIR MAX 97 (2).png" onclick="openModal(7)">
-      <h3>Nike Air Max Shoes - Nike Air Max 97</h3>
-      <p id="Price-tag">$15</p>
-      <label for="quantity4">Qty:</label>
-      <input type="number" id="quantity4" name="quantity" min="1" value="1" max="6">
-      <p id="in-Stock">In Stock: <span id="stock4">6</span></p> <!-- Example stock value -->
-      <button class="add-to-cart" data-product="Nike Air Max Shoes - Nike Air Max 97" data-price="15">Add to Cart</button>
-    </div>
+  <div class="product">
+    <img src="Bulova-Oceanographer-Men's-Automatic-Watch-pic6.avif" onclick="openModal(4)">
+    <h3>Bulova Oceanographer Men's Automatic Watch</h3>
+    <p id="Price-tag">$15</p>
+    <label for="quantity2">Qty:</label>
+    <input type="number" id="quantity1" name="quantity" min="1" value="1" max="5">
+    <p id="in-Stock">In Stock: <span id="stock2">5</span></p> <!-- Example stock value -->
+    <button class="add-to-cart" data-product="Bulova Oceanographer Men's Automatic Watch" data-price="15" data-image="Bulova-Oceanographer-Men's-Automatic-Watch-pic6.avif">Add to Cart</button>
+  </div>
+
+  <div class="product">
+    <img src="G-Shock-Digital-Black-Red-Shock--Watch-Pic7.avif" onclick="openModal(5)">
+    <h3>G-Shock Digital Black & Red - Watch</h3>
+    <p id="Price-tag">$15</p>
+    <label for="quantity2">Qty:</label>
+    <input type="number" id="quantity1" name="quantity" min="1" value="1" max="5">
+    <p id="in-Stock">In Stock: <span id="stock2">5</span></p> <!-- Example stock value -->
+    <button class="add-to-cart" data-product="G-Shock Digital Black & Red Shock" data-price="15" data-image="G-Shock-Digital-Black-Red-Shock--Watch-Pic7.avif">Add to Cart</button>
+  </div>
+
+  <div class="product">
+    <img src="Nike Air Max 97 By You Custom Men's Shoes 1.png" onclick="openModal(6)">
+    <h3>G-Shock Digital Black & Red - Watch</h3>
+    <p id="Price-tag">$15</p>
+    <label for="quantity2">Qty:</label>
+    <input type="number" id="quantity1" name="quantity" min="1" value="1" max="5">
+    <p id="in-Stock">In Stock: <span id="stock2">5</span></p> <!-- Example stock value -->
+    <button class="add-to-cart" data-product="Nike Air Max 97 By You Custom Men's Shoes" data-price="15" data-image="Nike Air Max 97 By You Custom Men's Shoes 1.png">Add to Cart</button>
+  </div>
+
+  <div class="product">
+    <img src="2 Chainz x Versace Chain Reaction Shoes.webp" onclick="openModal(7)">
+    <h3>2 Chainz x Versace Chain Reaction Shoes</h3>
+    <p id="Price-tag">$15</p>
+    <label for="quantity2">Qty:</label>
+    <input type="number" id="quantity1" name="quantity" min="1" value="1" max="5">
+    <p id="in-Stock">In Stock: <span id="stock2">5</span></p> <!-- Example stock value -->
+    <button class="add-to-cart" data-product="2 Chainz x Versace Chain Reaction Shoes" data-price="15" data-image="2 Chainz x Versace Chain Reaction Shoes.webp">Add to Cart</button>
+  </div>
+
 
   <!-- Add other products here similarly -->
 </ul>
@@ -331,7 +383,7 @@ document.querySelectorAll('.product').forEach(function(product, index) {
 
 
   </script>
-  <script src="Shopping.js"></script>
+  <script src="Shopping222.js"></script>
   <script src="node.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
